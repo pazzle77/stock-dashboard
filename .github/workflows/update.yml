@@ -1,0 +1,40 @@
+name: Update Dashboard
+
+on:
+  schedule:
+    - cron: "0 1 * * 1-5"   # 台股開盤 09:00 台北 (01:00 UTC)
+    - cron: "30 5 * * 1-5"  # 台股收盤 13:30 台北 (05:30 UTC)
+    - cron: "30 13 * * 1-5" # 美股開盤 21:30 台北 (13:30 UTC)
+    - cron: "0 20 * * 1-5"  # 美股收盤 04:00 台北 (20:00 UTC)
+  workflow_dispatch:         # 允許手動觸發
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run dashboard
+        run: python dashboard.py
+        env:
+          CI: true
+
+      - name: Commit & push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add dashboard.html
+          git diff --staged --quiet || git commit -m "Update dashboard $(date +'%Y-%m-%d %H:%M') UTC"
+          git push

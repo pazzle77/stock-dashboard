@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>台美股 Dashboard</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: #0f1117; color: #e2e8f0; min-height: 100vh; }
+    header { background: #1a1d27; border-bottom: 1px solid #2d3148;
+              padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; }
+    header h1 { font-size: 1.3rem; font-weight: 700; letter-spacing: .5px; color: #fff; }
+    .updated { font-size: .8rem; color: #64748b; }
+    .main { padding: 24px; max-width: 1400px; margin: 0 auto; }
+
+    /* 指數區 */
+    .section-label { font-size: .75rem; font-weight: 600; letter-spacing: 1px;
+                      text-transform: uppercase; color: #64748b; margin-bottom: 12px; }
+    .indices { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 32px; }
+    .index-card { background: #1a1d27; border: 1px solid #2d3148; border-radius: 10px;
+                   padding: 14px 18px; min-width: 160px; flex: 1; }
+    .index-card.up      { border-color: #166534; }
+    .index-card.down    { border-color: #7f1d1d; }
+    .index-card.up-tw   { border-color: #7f1d1d; }
+    .index-card.down-tw { border-color: #166534; }
+    .index-name  { font-size: .78rem; color: #94a3b8; margin-bottom: 6px; }
+    .index-price { font-size: 1.35rem; font-weight: 700; color: #f1f5f9; }
+    .index-price.na { color: #475569; font-size: 1rem; }
+    .index-change { font-size: .85rem; margin-top: 4px; }
+    .up      .index-change { color: #4ade80; }
+    .down    .index-change { color: #f87171; }
+    .up-tw   .index-change { color: #f87171; }
+    .down-tw .index-change { color: #4ade80; }
+
+    /* 新聞區 */
+    .news-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    @media (max-width: 900px) { .news-grid { grid-template-columns: 1fr; } }
+    .news-col { background: #1a1d27; border: 1px solid #2d3148; border-radius: 12px; overflow: hidden; }
+    .col-header { padding: 14px 18px; background: #20243a; border-bottom: 1px solid #2d3148;
+                   font-weight: 600; font-size: .9rem; display: flex; align-items: center; gap: 8px; }
+    .flag { font-size: 1.1rem; }
+    .news-item { padding: 12px 18px; border-bottom: 1px solid #1e2235; transition: background .15s; }
+    .news-item:last-child { border-bottom: none; }
+    .news-item:hover { background: #20243a; }
+    .news-item a { color: #c7d2fe; text-decoration: none; font-size: .88rem;
+                    line-height: 1.5; display: block; }
+    .news-item a:hover { color: #fff; }
+    .news-meta { margin-top: 5px; font-size: .75rem; color: #475569; display: flex; align-items: center; gap: 8px; }
+    .source-tag { background: #1e2a3a; color: #7dd3fc; padding: 1px 7px;
+                   border-radius: 4px; font-size: .72rem; white-space: nowrap; }
+    .divider { margin: 0 0 24px 0; border: none; border-top: 1px solid #2d3148; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📈 台美股 Dashboard</h1>
+    <span class="updated">更新時間：2026-05-08 15:48 (台北)</span>
+  </header>
+  <div class="main">
+
+    <div class="section-label">🇹🇼 台灣市場指數</div>
+    <div class="indices">
+        <div class="index-card down-tw">
+          <div class="index-name">台股加權指數</div>
+          <div class="index-price">41,603.94</div>
+          <div class="index-change">▼ 329.84 (-0.79%)</div>
+        </div>
+        <div class="index-card up-tw">
+          <div class="index-name">櫃買指數</div>
+          <div class="index-price">416.41</div>
+          <div class="index-change">▲ 0.00 (+0.00%)</div>
+        </div></div>
+
+    <div class="section-label">🇺🇸 美國市場指數</div>
+    <div class="indices">
+        <div class="index-card down">
+          <div class="index-name">道瓊工業指數</div>
+          <div class="index-price">49,596.97</div>
+          <div class="index-change">▼ 313.62 (-0.63%)</div>
+        </div>
+        <div class="index-card down">
+          <div class="index-name">S&P 500</div>
+          <div class="index-price">7,337.11</div>
+          <div class="index-change">▼ 28.01 (-0.38%)</div>
+        </div>
+        <div class="index-card down">
+          <div class="index-name">那斯達克</div>
+          <div class="index-price">25,806.20</div>
+          <div class="index-change">▼ 32.74 (-0.13%)</div>
+        </div>
+        <div class="index-card down">
+          <div class="index-name">羅素 2000</div>
+          <div class="index-price">2,839.63</div>
+          <div class="index-change">▼ 47.14 (-1.63%)</div>
+        </div></div>
+
+    <hr class="divider">
+
+    <div class="news-grid">
+      <div class="news-col">
+        <div class="col-header"><span class="flag">🇹🇼</span> 台股新聞</div>
+        
+        <div class="news-item">
+          <a href="https://news.cnyes.com/news/id/6449147" target="_blank" rel="noopener">全家深耕軍營20年 首度進駐國防部會客室</a>
+          <div class="news-meta"><span class="source-tag">鉅亨網</span>05/08 14:57</div>
+        </div>
+        <div class="news-item">
+          <a href="https://news.cnyes.com/news/id/6449136" target="_blank" rel="noopener">韋僑首季財報稅後賺7079萬元創新高EPS1.67元  4月營收也登頂</a>
+          <div class="news-meta"><span class="source-tag">鉅亨網</span>05/08 14:56</div>
+        </div>
+        <div class="news-item">
+          <a href="https://news.cnyes.com/news/id/6449134" target="_blank" rel="noopener">〈電子五哥營收〉廣達前4月營收已突破兆元關 下周法說釋AI伺服器展望</a>
+          <div class="news-meta"><span class="source-tag">鉅亨網</span>05/08 14:54</div>
+        </div>
+        <div class="news-item">
+          <a href="https://news.cnyes.com/news/id/6448975" target="_blank" rel="noopener">台積電4月營收4,107億元年增 17.5% 創下歷史次高</a>
+          <div class="news-meta"><span class="source-tag">鉅亨網</span>05/08 14:53</div>
+        </div>
+        <div class="news-item">
+          <a href="https://news.cnyes.com/news/id/6448979" target="_blank" rel="noopener">AI資料中心成金雞母！CPU供不應求 缺貨漲價超過10% 英特爾今年來股價飆近200%</a>
+          <div class="news-meta"><span class="source-tag">鉅亨網</span>05/08 14:50</div>
+        </div>
+        <div class="news-item">
+          <a href="https://news.cnyes.com/news/id/6448280" target="_blank" rel="noopener">晶片股狂潮背後真相！輝達漲勢脫隊淪拖油瓶 專家：市場集中度正下降</a>
+          <div class="news-meta"><span class="source-tag">鉅亨網</span>05/08 14:40</div>
+        </div>
+        <div class="news-item">
+          <a href="https://news.cnyes.com/news/id/6448983" target="_blank" rel="noopener">伊朗戰爭停火協議面臨嚴峻考驗 阿聯通報遭無人機與飛彈襲擊</a>
+          <div class="news-meta"><span class="source-tag">鉅亨網</span>05/08 14:30</div>
+        </div>
+        <div class="news-item">
+          <a href="https://news.cnyes.com/news/id/6448309" target="_blank" rel="noopener">DeepSeek獲「國家隊」與騰訊阿里搶投 估值驚傳飆上450億美元</a>
+          <div class="news-meta"><span class="source-tag">鉅亨網</span>05/08 14:24</div>
+        </div>
+        <div class="news-item">
+          <a href="https://news.cnyes.com/news/id/6448984" target="_blank" rel="noopener">〈台股盤後〉闖關4萬2失利 下跌329點守住5日線 周線長紅飆漲2677點</a>
+          <div class="news-meta"><span class="source-tag">鉅亨網</span>05/08 14:17</div>
+        </div>
+        <div class="news-item">
+          <a href="https://news.cnyes.com/news/id/6449100" target="_blank" rel="noopener">營收速報  - 國票金(2889)4月營收15.02億元年增率高達3640.86％</a>
+          <div class="news-meta"><span class="source-tag">鉅亨網</span>05/08 14:15</div>
+        </div>
+        <div class="news-item">
+          <a href="https://money.udn.com/money/story/11162/9490648" target="_blank" rel="noopener">LINE調整行事曆超連結功能　可手動關閉</a>
+          <div class="news-meta"><span class="source-tag">經濟日報</span>05/08 15:45</div>
+        </div>
+        <div class="news-item">
+          <a href="https://money.udn.com/money/story/5612/9490635" target="_blank" rel="noopener">微軟：台灣AI擴散率31.8%躋身全球前20　領先德美</a>
+          <div class="news-meta"><span class="source-tag">經濟日報</span>05/08 15:37</div>
+        </div>
+        <div class="news-item">
+          <a href="https://money.udn.com/money/story/5612/9490634" target="_blank" rel="noopener">搶攻台灣財管市場　滙豐推高雄專區保費融資服務</a>
+          <div class="news-meta"><span class="source-tag">經濟日報</span>05/08 15:37</div>
+        </div>
+        <div class="news-item">
+          <a href="https://money.udn.com/money/story/5612/9490631" target="_blank" rel="noopener">上銀：攻AI人形機器人　受惠半導體自動化需求</a>
+          <div class="news-meta"><span class="source-tag">經濟日報</span>05/08 15:37</div>
+        </div>
+        <div class="news-item">
+          <a href="https://money.udn.com/money/story/5612/9490620" target="_blank" rel="noopener">勤誠獲美CSP液冷櫃訂單　今年機櫃營收占比拚逾1成</a>
+          <div class="news-meta"><span class="source-tag">經濟日報</span>05/08 15:30</div>
+        </div>
+        <div class="news-item">
+          <a href="https://money.udn.com/money/story/5612/9490616" target="_blank" rel="noopener">金管會曝今年度六大施政重點 聚焦推動發展具台灣特色的亞資中心</a>
+          <div class="news-meta"><span class="source-tag">經濟日報</span>05/08 15:29</div>
+        </div>
+        <div class="news-item">
+          <a href="https://money.udn.com/money/story/5612/9490607" target="_blank" rel="noopener">Sony、台積電初步達成下世代影像感測器策略合作協議</a>
+          <div class="news-meta"><span class="source-tag">經濟日報</span>05/08 15:26</div>
+        </div>
+        <div class="news-item">
+          <a href="https://money.udn.com/money/story/5612/9490593" target="_blank" rel="noopener">匯豐銀攜手安聯人壽推「保費融資」 融資上限為300萬美元</a>
+          <div class="news-meta"><span class="source-tag">經濟日報</span>05/08 15:18</div>
+        </div>
+        <div class="news-item">
+          <a href="https://money.udn.com/money/story/5612/9490578" target="_blank" rel="noopener">駐馬代表：台馬半導體供應鏈互補 拓展區域市場</a>
+          <div class="news-meta"><span class="source-tag">經濟日報</span>05/08 15:12</div>
+        </div>
+        <div class="news-item">
+          <a href="https://money.udn.com/money/story/5612/9490537" target="_blank" rel="noopener">5G消防救援系統落地　台灣大全國首創導入高雄</a>
+          <div class="news-meta"><span class="source-tag">經濟日報</span>05/08 14:55</div>
+        </div>
+      </div>
+      <div class="news-col">
+        <div class="col-header"><span class="flag">🇺🇸</span> 美股新聞</div>
+        
+        <div class="news-item">
+          <a href="https://www.marketwatch.com/story/americans-are-not-great-at-managing-money-social-security-and-medicare-saved-my-father-from-financial-ruin-am-i-wrong-878bd7a2?mod=mw_rss_topstories" target="_blank" rel="noopener">My mother regrets paying Social Security. She says she should have invested her contributions. I disagree. Who’s right?</a>
+          <div class="news-meta"><span class="source-tag">MarketWatch</span>05/08 07:31</div>
+        </div>
+        <div class="news-item">
+          <a href="https://www.marketwatch.com/story/oil-futures-rise-after-u-s-iran-trade-fire-stock-futures-quiet-after-court-rejects-trumps-tariffs-4ee86b13?mod=mw_rss_topstories" target="_blank" rel="noopener">Oil futures rise after U.S., Iran trade fire; stock futures quiet after court rejects Trump’s tariffs</a>
+          <div class="news-meta"><span class="source-tag">MarketWatch</span>05/08 02:57</div>
+        </div>
+        <div class="news-item">
+          <a href="https://www.marketwatch.com/story/cloudflare-to-cut-20-of-staff-in-a-big-bet-on-ai-investors-arent-sold-501d4aa3?mod=mw_rss_topstories" target="_blank" rel="noopener">Cloudflare to cut 20% of staff in a big bet on AI. Investors aren’t sold.</a>
+          <div class="news-meta"><span class="source-tag">MarketWatch</span>05/08 00:32</div>
+        </div>
+        <div class="news-item">
+          <a href="https://www.marketwatch.com/story/irens-stock-soars-as-a-major-nvidia-investment-overshadows-revenue-shortfall-c286cdb8?mod=mw_rss_topstories" target="_blank" rel="noopener">Iren’s stock soars as a major Nvidia investment overshadows revenue shortfall</a>
+          <div class="news-meta"><span class="source-tag">MarketWatch</span>05/08 00:30</div>
+        </div>
+        <div class="news-item">
+          <a href="https://www.marketwatch.com/story/soundhounds-stock-falls-as-acquisitions-weigh-on-earnings-results-f24fc593?mod=mw_rss_topstories" target="_blank" rel="noopener">SoundHound’s stock falls as acquisitions weigh on earnings results</a>
+          <div class="news-meta"><span class="source-tag">MarketWatch</span>05/08 00:29</div>
+        </div>
+        <div class="news-item">
+          <a href="https://www.marketwatch.com/story/airbnb-is-seeing-some-of-its-fastest-growth-from-this-surprising-segment-7e1b6320?mod=mw_rss_topstories" target="_blank" rel="noopener">Airbnb is seeing some of its fastest growth from this surprising segment</a>
+          <div class="news-meta"><span class="source-tag">MarketWatch</span>05/08 00:26</div>
+        </div>
+        <div class="news-item">
+          <a href="https://www.marketwatch.com/story/ai-is-coming-for-your-job-after-all-these-new-announcements-prove-it-3fa74d86?mod=mw_rss_topstories" target="_blank" rel="noopener">AI is coming for your job after all. These new announcements prove it.</a>
+          <div class="news-meta"><span class="source-tag">MarketWatch</span>05/08 00:17</div>
+        </div>
+        <div class="news-item">
+          <a href="https://www.marketwatch.com/story/5-reasons-stocks-are-rallying-in-the-face-of-an-oil-price-shock-dd217b7e?mod=mw_rss_topstories" target="_blank" rel="noopener">5 reasons stocks are rallying in the face of an oil-price shock</a>
+          <div class="news-meta"><span class="source-tag">MarketWatch</span>05/08 00:14</div>
+        </div>
+        <div class="news-item">
+          <a href="https://www.marketwatch.com/story/coreweave-reports-unprecedented-100-billion-backlog-but-that-comes-at-a-cost-98b385c7?mod=mw_rss_topstories" target="_blank" rel="noopener">CoreWeave shares plunge. Revenue doubles but AI costs are rising.</a>
+          <div class="news-meta"><span class="source-tag">MarketWatch</span>05/07 22:46</div>
+        </div>
+        <div class="news-item">
+          <a href="https://www.marketwatch.com/story/theres-a-new-worry-keeping-treasury-yields-and-borrowing-costs-higher-d3595fe1?mod=mw_rss_topstories" target="_blank" rel="noopener">There’s a new worry keeping Treasury yields and borrowing costs higher</a>
+          <div class="news-meta"><span class="source-tag">MarketWatch</span>05/07 22:41</div>
+        </div>
+        <div class="news-item">
+          <a href="https://www.cnbc.com/2026/05/08/nintendo-switch-2-price-hike-sales-fall-memory-crunch.html" target="_blank" rel="noopener">Nintendo hikes Switch 2 prices and expects console sales to decline as memory crunch bites</a>
+          <div class="news-meta"><span class="source-tag">CNBC Markets</span>05/08 07:28</div>
+        </div>
+        <div class="news-item">
+          <a href="https://www.cnbc.com/2026/05/08/traders-nacho-trade-strait-hormuz-oil-markets-taco-trump-iran.html" target="_blank" rel="noopener">‘Not a Chance Hormuz Opens’: How Wall Street’s new NACHO trade bets on a prolonged oil shock</a>
+          <div class="news-meta"><span class="source-tag">CNBC Markets</span>05/08 05:39</div>
+        </div>
+        <div class="news-item">
+          <a href="https://www.cnbc.com/2026/05/08/trump-tariffs-trade-eu-europe-deal.html" target="_blank" rel="noopener">Trump threatens EU with ‘much higher’ tariffs if no trade deal signed by new deadline</a>
+          <div class="news-meta"><span class="source-tag">CNBC Markets</span>05/08 07:32</div>
+        </div>
+        <div class="news-item">
+          <a href="https://www.cnbc.com/2026/05/07/iran-war-hormuz-strait-ceasefire-trump.html" target="_blank" rel="noopener">U.S. and Iran trade fire in Strait of Hormuz; each claims other shot first</a>
+          <div class="news-meta"><span class="source-tag">CNBC Markets</span>05/07 22:48</div>
+        </div>
+        <div class="news-item">
+          <a href="https://www.cnbc.com/2026/05/07/heres-how-the-stock-market-may-trade-the-april-jobs-report-according-to-jpmorgan.html" target="_blank" rel="noopener">Here's how the stock market may trade the April jobs report, according to JPMorgan</a>
+          <div class="news-meta"><span class="source-tag">CNBC Markets</span>05/07 20:00</div>
+        </div>
+        <div class="news-item">
+          <a href="https://www.cnbc.com/2026/05/08/iran-focus-at-trump-xi-summit-may-delay-progress-on-tariffs-rare-earths.html" target="_blank" rel="noopener">Iran focus at Trump-Xi summit may delay progress on tariffs, rare earths</a>
+          <div class="news-meta"><span class="source-tag">CNBC Markets</span>05/08 00:56</div>
+        </div>
+        <div class="news-item">
+          <a href="https://www.cnbc.com/2026/05/07/heres-what-to-expect-from-fridays-release-of-the-april-jobs-report.html" target="_blank" rel="noopener">Here's what to expect from Friday's release of the April jobs report</a>
+          <div class="news-meta"><span class="source-tag">CNBC Markets</span>05/07 19:20</div>
+        </div>
+        <div class="news-item">
+          <a href="https://www.cnbc.com/2026/05/08/us-tech-stocks-cheap-stellar-earnings-where-next.html" target="_blank" rel="noopener">Tech stocks could offer their best value in years, analysts say, after stellar earnings season</a>
+          <div class="news-meta"><span class="source-tag">CNBC Markets</span>05/08 07:34</div>
+        </div>
+        <div class="news-item">
+          <a href="https://www.cnbc.com/2026/05/08/sports-ipl-rcb-rajasthan-royals-cricket-investing.html" target="_blank" rel="noopener">Billion-dollar bets: Global investors chase Indian Premier League to ride booming cricket economy</a>
+          <div class="news-meta"><span class="source-tag">CNBC Markets</span>05/08 07:39</div>
+        </div>
+        <div class="news-item">
+          <a href="https://www.cnbc.com/2026/05/08/toyota-1q-2026-earnings.html" target="_blank" rel="noopener">Toyota fourth-quarter profit misses by wide margin as U.S. tariffs drive 49% slump</a>
+          <div class="news-meta"><span class="source-tag">CNBC Markets</span>05/08 07:29</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
