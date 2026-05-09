@@ -1,0 +1,9 @@
+{
+  "outputDirectory": ".",
+  "builds": [
+    { "src": "dashboard.html", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/", "dest": "/dashboard.html" }
+  ]
+}
