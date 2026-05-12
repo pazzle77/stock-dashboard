@@ -13,15 +13,14 @@ class handler(BaseHTTPRequestHandler):
                 try:
                     t = yf.Ticker(sym)
                     intra = t.history(period="1d", interval="1m")
-                    daily = t.history(period="2d", interval="1d")
-                    if not intra.empty and len(daily) >= 2:
-                        price = float(intra["Close"].iloc[-1])
-                        prev  = float(daily["Close"].iloc[-2])
-                    elif not daily.empty:
-                        price = float(daily["Close"].iloc[-1])
-                        prev  = float(daily["Close"].iloc[-2]) if len(daily) >= 2 else price
-                    else:
+                    daily = t.history(period="5d", interval="1d")
+                    if len(daily) < 2:
                         continue
+                    prev = float(daily["Close"].iloc[-2])
+                    if not intra.empty:
+                        price = float(intra["Close"].iloc[-1])
+                    else:
+                        price = float(daily["Close"].iloc[-1])
                     chg = price - prev
                     pct = chg / prev * 100
                     results[sym] = {"price": price, "change": chg, "pct": pct}
