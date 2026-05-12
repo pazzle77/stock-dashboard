@@ -58,13 +58,20 @@ US_FEEDS = [
 def fetch_index(symbol: str) -> dict:
     try:
         t = yf.Ticker(symbol)
-        hist = t.history(period="2d", interval="1d")
-        if hist.empty:
-            return {"price": None}
-        price = hist["Close"].iloc[-1]
-        prev  = hist["Close"].iloc[-2] if len(hist) >= 2 else price
-        chg   = price - prev
-        pct   = chg / prev * 100
+        fi = t.fast_info
+        lp = fi.last_price
+        pc = fi.previous_close
+        if lp is not None and pc:
+            price = float(lp)
+            prev  = float(pc)
+        else:
+            daily = t.history(period="5d", interval="1d")
+            if len(daily) < 2:
+                return {"price": None}
+            price = float(daily["Close"].iloc[-1])
+            prev  = float(daily["Close"].iloc[-2])
+        chg = price - prev
+        pct = chg / prev * 100
         return {"price": price, "change": chg, "pct": pct}
     except Exception:
         return {"price": None}
@@ -123,27 +130,28 @@ def escape(s: str) -> str:
 
 # ── HTML 生成 ─────────────────────────────────────────────
 def build_index_card(idx: dict, data: dict) -> str:
+    sym_id = idx["symbol"].replace("^", "")
     if data["price"] is None:
         return f"""
-        <div class="index-card">
+        <div class="index-card" id="card-{sym_id}">
           <div class="index-name">{idx['name']}</div>
-          <div class="index-price na">N/A</div>
+          <div class="index-price na" id="price-{sym_id}">N/A</div>
+          <div class="index-change" id="change-{sym_id}"></div>
         </div>"""
     price  = data["price"]
     chg    = data["change"]
     pct    = data["pct"]
     is_tw  = idx["region"] == "tw"
-    # 台股：上漲紅、下跌綠；美股：上漲綠、下跌紅
     if is_tw:
         color = "up-tw" if chg >= 0 else "down-tw"
     else:
         color = "up" if chg >= 0 else "down"
     arrow = "▲" if chg >= 0 else "▼"
     return f"""
-        <div class="index-card {color}">
+        <div class="index-card {color}" id="card-{sym_id}" data-region="{idx['region']}">
           <div class="index-name">{idx['name']}</div>
-          <div class="index-price">{price:,.2f}</div>
-          <div class="index-change">{arrow} {abs(chg):,.2f} ({pct:+.2f}%)</div>
+          <div class="index-price" id="price-{sym_id}">{price:,.2f}</div>
+          <div class="index-change" id="change-{sym_id}">{arrow} {abs(chg):,.2f} ({pct:+.2f}%)</div>
         </div>"""
 
 
@@ -224,7 +232,7 @@ def build_html(tw_indices, us_indices, tw_news, us_news) -> str:
 <body>
   <header>
     <h1>📈 台美股 Dashboard</h1>
-    <span class="updated">更新時間：{now} (台北)</span>
+    <span class="updated">新聞更新：{now} (台北) &nbsp;<span id="live-dot" style="display:none;color:#4ade80;font-size:.85rem;">● 指數即時</span></span>
   </header>
   <div class="main">
 
@@ -248,6 +256,41 @@ def build_html(tw_indices, us_indices, tw_news, us_news) -> str:
     </div>
 
   </div>
+  <script>
+    const TW_SYMS = new Set(["TWII","TWOII"]);
+
+    function fmt(price) {{
+      return price.toLocaleString("en-US", {{minimumFractionDigits:2, maximumFractionDigits:2}});
+    }}
+
+    async function updateIndices() {{
+      try {{
+        const resp = await fetch("/api/quote");
+        if (!resp.ok) return;
+        const data = await resp.json();
+        for (const [rawSym, q] of Object.entries(data)) {{
+          const sym = rawSym.replace("^","");
+          const card   = document.getElementById("card-"   + sym);
+          const priceEl= document.getElementById("price-"  + sym);
+          const changeEl=document.getElementById("change-" + sym);
+          if (!card || q.price == null) continue;
+          const isTW  = TW_SYMS.has(sym);
+          const up    = q.change >= 0;
+          const color = isTW ? (up ? "up-tw" : "down-tw") : (up ? "up" : "down");
+          const arrow = up ? "▲" : "▼";
+          card.className    = "index-card " + color;
+          priceEl.textContent = fmt(q.price);
+          changeEl.textContent = arrow + " " + fmt(Math.abs(q.change)) + " (" + (q.pct >= 0 ? "+" : "") + q.pct.toFixed(2) + "%)";
+        }}
+        document.getElementById("live-dot").style.display = "inline";
+      }} catch(e) {{
+        console.warn("更新失敗", e);
+      }}
+    }}
+
+    updateIndices();
+    setInterval(updateIndices, 30000);
+  </script>
 </body>
 </html>"""
 

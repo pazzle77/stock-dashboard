@@ -12,15 +12,18 @@ class handler(BaseHTTPRequestHandler):
             for sym in SYMBOLS:
                 try:
                     t = yf.Ticker(sym)
-                    intra = t.history(period="1d", interval="1m")
-                    daily = t.history(period="5d", interval="1d")
-                    if len(daily) < 2:
-                        continue
-                    prev = float(daily["Close"].iloc[-2])
-                    if not intra.empty:
-                        price = float(intra["Close"].iloc[-1])
+                    fi = t.fast_info
+                    lp = fi.last_price
+                    pc = fi.previous_close
+                    if lp is not None and pc:
+                        price = float(lp)
+                        prev = float(pc)
                     else:
+                        daily = t.history(period="5d", interval="1d")
+                        if len(daily) < 2:
+                            continue
                         price = float(daily["Close"].iloc[-1])
+                        prev = float(daily["Close"].iloc[-2])
                     chg = price - prev
                     pct = chg / prev * 100
                     results[sym] = {"price": price, "change": chg, "pct": pct}
