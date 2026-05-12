@@ -58,11 +58,19 @@ US_FEEDS = [
 def fetch_index(symbol: str) -> dict:
     try:
         t = yf.Ticker(symbol)
+        intra = t.history(period="1d", interval="1m")
         daily = t.history(period="5d", interval="1d")
         if len(daily) < 2:
             return {"price": None}
-        price = float(daily["Close"].iloc[-1])
-        prev  = float(daily["Close"].iloc[-2])
+        if not intra.empty:
+            price = float(intra["Close"].iloc[-1])
+            if intra.index[-1].date() == daily.index[-1].date():
+                prev = float(daily["Close"].iloc[-2])
+            else:
+                prev = float(daily["Close"].iloc[-1])
+        else:
+            price = float(daily["Close"].iloc[-1])
+            prev  = float(daily["Close"].iloc[-2])
         chg = price - prev
         pct = chg / prev * 100
         return {"price": price, "change": chg, "pct": pct}
