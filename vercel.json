@@ -1,9 +1,10 @@
 {
-  "outputDirectory": ".",
   "builds": [
-    { "src": "dashboard.html", "use": "@vercel/static" }
+    { "src": "dashboard.html", "use": "@vercel/static" },
+    { "src": "api/quote.py", "use": "@vercel/python" }
   ],
   "routes": [
+    { "src": "/api/quote", "dest": "/api/quote.py" },
     { "src": "/", "dest": "/dashboard.html" }
   ]
 }
