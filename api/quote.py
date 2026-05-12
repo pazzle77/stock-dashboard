@@ -1,8 +1,26 @@
 from http.server import BaseHTTPRequestHandler
 import json
 import yfinance as yf
+from datetime import datetime, time as dtime
+from zoneinfo import ZoneInfo
 
 SYMBOLS = ["^TWII", "^TWOII", "^DJI", "^GSPC", "^IXIC", "^RUT"]
+TW_SYMS = {"^TWII", "^TWOII"}
+TW_TZ   = ZoneInfo("Asia/Taipei")
+ET_TZ   = ZoneInfo("America/New_York")
+
+
+def market_open(sym):
+    if sym in TW_SYMS:
+        now = datetime.now(TW_TZ)
+        if now.weekday() >= 5:
+            return False
+        return dtime(9, 0) <= now.time() < dtime(13, 30)
+    else:
+        now = datetime.now(ET_TZ)
+        if now.weekday() >= 5:
+            return False
+        return dtime(9, 30) <= now.time() < dtime(16, 0)
 
 
 class handler(BaseHTTPRequestHandler):
@@ -12,17 +30,20 @@ class handler(BaseHTTPRequestHandler):
             for sym in SYMBOLS:
                 try:
                     t = yf.Ticker(sym)
-                    intra = t.history(period="1d", interval="1m")
                     daily = t.history(period="5d", interval="1d")
                     if len(daily) < 2:
                         continue
-                    if not intra.empty:
-                        price = float(intra["Close"].iloc[-1])
-                        # if daily already has today's bar, prev day is at [-2]
-                        if intra.index[-1].date() == daily.index[-1].date():
-                            prev = float(daily["Close"].iloc[-2])
+                    if market_open(sym):
+                        intra = t.history(period="1d", interval="1m")
+                        if not intra.empty:
+                            price = float(intra["Close"].iloc[-1])
+                            if intra.index[-1].date() == daily.index[-1].date():
+                                prev = float(daily["Close"].iloc[-2])
+                            else:
+                                prev = float(daily["Close"].iloc[-1])
                         else:
-                            prev = float(daily["Close"].iloc[-1])
+                            price = float(daily["Close"].iloc[-1])
+                            prev = float(daily["Close"].iloc[-2])
                     else:
                         price = float(daily["Close"].iloc[-1])
                         prev = float(daily["Close"].iloc[-2])

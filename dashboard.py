@@ -6,8 +6,9 @@
 
 import urllib.request
 import xml.etree.ElementTree as ET
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timezone, timedelta, time as dtime
 from pathlib import Path
+from zoneinfo import ZoneInfo
 import yfinance as yf
 
 OUTPUT_FILE = Path(__file__).parent / "dashboard.html"
@@ -15,6 +16,21 @@ NEWS_PER_SOURCE = 10
 NEWS_TOTAL = 20  # 每區塊最多顯示幾則
 REQUEST_TIMEOUT = 10
 TW_TZ = timezone(timedelta(hours=8))
+_TW_ZI = ZoneInfo("Asia/Taipei")
+_ET_ZI = ZoneInfo("America/New_York")
+_TW_SYMS = {"^TWII", "^TWOII"}
+
+def _market_open(sym):
+    if sym in _TW_SYMS:
+        now = datetime.now(_TW_ZI)
+        if now.weekday() >= 5:
+            return False
+        return dtime(9, 0) <= now.time() < dtime(13, 30)
+    else:
+        now = datetime.now(_ET_ZI)
+        if now.weekday() >= 5:
+            return False
+        return dtime(9, 30) <= now.time() < dtime(16, 0)
 
 # ── 指數設定 ─────────────────────────────────────────────
 INDICES = [
@@ -58,16 +74,20 @@ US_FEEDS = [
 def fetch_index(symbol: str) -> dict:
     try:
         t = yf.Ticker(symbol)
-        intra = t.history(period="1d", interval="1m")
         daily = t.history(period="5d", interval="1d")
         if len(daily) < 2:
             return {"price": None}
-        if not intra.empty:
-            price = float(intra["Close"].iloc[-1])
-            if intra.index[-1].date() == daily.index[-1].date():
-                prev = float(daily["Close"].iloc[-2])
+        if _market_open(symbol):
+            intra = t.history(period="1d", interval="1m")
+            if not intra.empty:
+                price = float(intra["Close"].iloc[-1])
+                if intra.index[-1].date() == daily.index[-1].date():
+                    prev = float(daily["Close"].iloc[-2])
+                else:
+                    prev = float(daily["Close"].iloc[-1])
             else:
-                prev = float(daily["Close"].iloc[-1])
+                price = float(daily["Close"].iloc[-1])
+                prev  = float(daily["Close"].iloc[-2])
         else:
             price = float(daily["Close"].iloc[-1])
             prev  = float(daily["Close"].iloc[-2])
