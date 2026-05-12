@@ -1,34 +1,32 @@
 from http.server import BaseHTTPRequestHandler
 import json
-import urllib.request
-import urllib.parse
+import yfinance as yf
 
-SYMBOLS = "^TWII,^TWOII,^DJI,^GSPC,^IXIC,^RUT"
-YF_URL = (
-    "https://query1.finance.yahoo.com/v7/finance/quote"
-    f"?symbols={urllib.parse.quote(SYMBOLS)}"
-    "&fields=regularMarketPrice,regularMarketChange,regularMarketChangePercent"
-)
+SYMBOLS = ["^TWII", "^TWOII", "^DJI", "^GSPC", "^IXIC", "^RUT"]
 
 
 class handler(BaseHTTPRequestHandler):
     def do_GET(self):
         try:
-            req = urllib.request.Request(
-                YF_URL,
-                headers={"User-Agent": "Mozilla/5.0", "Accept": "application/json"},
-            )
-            with urllib.request.urlopen(req, timeout=10) as r:
-                raw = json.load(r)
-
             results = {}
-            for q in raw.get("quoteResponse", {}).get("result", []):
-                sym = q["symbol"]
-                results[sym] = {
-                    "price": q.get("regularMarketPrice"),
-                    "change": q.get("regularMarketChange"),
-                    "pct": q.get("regularMarketChangePercent"),
-                }
+            for sym in SYMBOLS:
+                try:
+                    t = yf.Ticker(sym)
+                    intra = t.history(period="1d", interval="1m")
+                    daily = t.history(period="2d", interval="1d")
+                    if not intra.empty and len(daily) >= 2:
+                        price = float(intra["Close"].iloc[-1])
+                        prev  = float(daily["Close"].iloc[-2])
+                    elif not daily.empty:
+                        price = float(daily["Close"].iloc[-1])
+                        prev  = float(daily["Close"].iloc[-2]) if len(daily) >= 2 else price
+                    else:
+                        continue
+                    chg = price - prev
+                    pct = chg / prev * 100
+                    results[sym] = {"price": price, "change": chg, "pct": pct}
+                except Exception:
+                    continue
 
             body = json.dumps(results).encode()
             self.send_response(200)
