@@ -19,6 +19,7 @@ $PYTHON "$DIR/dashboard.py" >> "$LOG" 2>&1
 $GIT add dashboard.html
 if ! $GIT diff --staged --quiet; then
     $GIT commit -m "Auto update $(date '+%Y-%m-%d %H:%M') TW"
+    $GIT pull --rebase origin main >> "$LOG" 2>&1
     $GIT push origin main >> "$LOG" 2>&1
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] Push 完成" >> "$LOG"
     # 通知 Vercel 重新部署
