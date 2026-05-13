@@ -19,7 +19,7 @@ $PYTHON "$DIR/dashboard.py" >> "$LOG" 2>&1
 $GIT add dashboard.html
 if ! $GIT diff --staged --quiet; then
     $GIT commit -m "Auto update $(date '+%Y-%m-%d %H:%M') TW"
-    $GIT push origin mac-cron >> "$LOG" 2>&1
+    $GIT push origin main >> "$LOG" 2>&1
     echo "[$(date '+%Y-%m-%d %H:%M:%S')] Push 完成" >> "$LOG"
     # 通知 Vercel 重新部署
     curl -s -X POST "https://api.vercel.com/v1/integrations/deploy/prj_7c3XpuRMC1YaOY8H4ueoHAW0FH0C/UbLWjeWt4F" >> "$LOG" 2>&1
