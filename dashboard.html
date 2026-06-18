@@ -55,16 +55,16 @@
 <body>
   <header>
     <h1>📈 台美股 Dashboard</h1>
-    <span class="updated">新聞更新：2026-06-19 00:44 (台北) &nbsp;<span id="live-dot" style="display:none;color:#4ade80;font-size:.85rem;">● 指數即時</span></span>
+    <span class="updated">新聞更新：2026-06-19 06:21 (台北) &nbsp;<span id="live-dot" style="display:none;color:#4ade80;font-size:.85rem;">● 指數即時</span></span>
   </header>
   <div class="main">
 
     <div class="section-label">🇹🇼 台灣市場指數</div>
     <div class="indices">
-        <div class="index-card up-tw" id="card-TWII" data-region="tw">
+        <div class="index-card" id="card-TWII">
           <div class="index-name">台股加權指數</div>
-          <div class="index-price" id="price-TWII">45,877.39</div>
-          <div class="index-change" id="change-TWII">▲ 68.20 (+0.15%)</div>
+          <div class="index-price na" id="price-TWII">N/A</div>
+          <div class="index-change" id="change-TWII"></div>
         </div>
         <div class="index-card" id="card-TWOII">
           <div class="index-name">櫃買指數</div>
@@ -76,23 +76,23 @@
     <div class="indices">
         <div class="index-card up" id="card-DJI" data-region="us">
           <div class="index-name">道瓊工業指數</div>
-          <div class="index-price" id="price-DJI">51,673.85</div>
-          <div class="index-change" id="change-DJI">▲ 181.30 (+0.35%)</div>
+          <div class="index-price" id="price-DJI">51,564.70</div>
+          <div class="index-change" id="change-DJI">▲ 72.15 (+0.14%)</div>
         </div>
         <div class="index-card up" id="card-GSPC" data-region="us">
           <div class="index-name">S&P 500</div>
-          <div class="index-price" id="price-GSPC">7,500.79</div>
-          <div class="index-change" id="change-GSPC">▲ 80.69 (+1.09%)</div>
+          <div class="index-price" id="price-GSPC">7,500.58</div>
+          <div class="index-change" id="change-GSPC">▲ 80.48 (+1.08%)</div>
         </div>
         <div class="index-card up" id="card-IXIC" data-region="us">
           <div class="index-name">那斯達克</div>
-          <div class="index-price" id="price-IXIC">26,410.34</div>
-          <div class="index-change" id="change-IXIC">▲ 388.68 (+1.49%)</div>
+          <div class="index-price" id="price-IXIC">26,517.93</div>
+          <div class="index-change" id="change-IXIC">▲ 496.27 (+1.91%)</div>
         </div>
         <div class="index-card up" id="card-RUT" data-region="us">
           <div class="index-name">羅素 2000</div>
-          <div class="index-price" id="price-RUT">2,962.65</div>
-          <div class="index-change" id="change-RUT">▲ 44.67 (+1.53%)</div>
+          <div class="index-price" id="price-RUT">2,979.77</div>
+          <div class="index-change" id="change-RUT">▲ 61.79 (+2.12%)</div>
         </div></div>
 
     <hr class="divider">
@@ -102,44 +102,76 @@
         <div class="col-header"><span class="flag">🇹🇼</span> 台股新聞</div>
         
         <div class="news-item">
-          <a href="https://news.cnyes.com/news/id/6505408" target="_blank" rel="noopener">盤中速報 - 比特幣現金大跌9.06%，報195.7美元</a>
-          <div class="news-meta"><span class="source-tag">鉅亨網</span>06/18 23:50</div>
+          <a href="https://news.cnyes.com/news/id/6505452" target="_blank" rel="noopener">〈美股盤後〉美伊和平協議提振 費半飆超6% 英特爾暴漲超10%</a>
+          <div class="news-meta"><span class="source-tag">鉅亨網</span>06/19 05:16</div>
         </div>
         <div class="news-item">
-          <a href="https://news.cnyes.com/news/id/6505407" target="_blank" rel="noopener">盤中速報 - FET大跌8.87%，報0.191美元</a>
-          <div class="news-meta"><span class="source-tag">鉅亨網</span>06/18 23:50</div>
+          <a href="https://news.cnyes.com/news/id/6504853" target="_blank" rel="noopener">晶片股觸頂了？華爾街罕見喊話：可續抱、別加碼</a>
+          <div class="news-meta"><span class="source-tag">鉅亨網</span>06/19 03:40</div>
         </div>
         <div class="news-item">
-          <a href="https://news.cnyes.com/news/id/6505406" target="_blank" rel="noopener">盤中速報 - 雪崩代幣大跌9.34%，報6.28美元</a>
-          <div class="news-meta"><span class="source-tag">鉅亨網</span>06/18 23:50</div>
+          <a href="https://news.cnyes.com/news/id/6505465" target="_blank" rel="noopener">7月升息要來了？華許首秀震撼市場 利率期貨交易量創新高</a>
+          <div class="news-meta"><span class="source-tag">鉅亨網</span>06/19 03:00</div>
         </div>
         <div class="news-item">
-          <a href="https://news.cnyes.com/news/id/6505400" target="_blank" rel="noopener">盤中速報 - Sui大跌8.01%，報0.73美元</a>
-          <div class="news-meta"><span class="source-tag">鉅亨網</span>06/18 23:35</div>
+          <a href="https://news.cnyes.com/news/id/6505447" target="_blank" rel="noopener">美伊和平協議生效！荷姆茲海峽恢復原油運輸 但黎巴嫩戰火未熄</a>
+          <div class="news-meta"><span class="source-tag">鉅亨網</span>06/19 02:00</div>
+        </div>
+        <div class="news-item">
+          <a href="https://news.cnyes.com/news/id/6505371" target="_blank" rel="noopener">買了又得賣？Manus傳斥資20億美元從Meta手中買回自己</a>
+          <div class="news-meta"><span class="source-tag">鉅亨網</span>06/19 01:00</div>
+        </div>
+        <div class="news-item">
+          <a href="https://news.cnyes.com/news/id/6505403" target="_blank" rel="noopener">英特爾盤中狂飆11%！川普證實蘋果將在美國合作造晶片</a>
+          <div class="news-meta"><span class="source-tag">鉅亨網</span>06/19 00:27</div>
+        </div>
+        <div class="news-item">
+          <a href="https://news.cnyes.com/news/id/6505428" target="_blank" rel="noopener">鉅亨速報 - Factset 最新調查：SpaceX(SPCX-US)EPS預估上修至-0.89元，預估目標價為227.00元</a>
+          <div class="news-meta"><span class="source-tag">鉅亨網</span>06/19 00:16</div>
+        </div>
+        <div class="news-item">
+          <a href="https://news.cnyes.com/news/id/6505372" target="_blank" rel="noopener">美伊停火難阻全球央行鷹派轉向 升息風險仍未解除</a>
+          <div class="news-meta"><span class="source-tag">鉅亨網</span>06/19 00:00</div>
         </div>
         <div class="news-item">
           <a href="https://news.cnyes.com/news/id/6505396" target="_blank" rel="noopener">挑戰輝達霸主地位！亞馬遜傳洽談對外銷售AI晶片</a>
           <div class="news-meta"><span class="source-tag">鉅亨網</span>06/18 23:30</div>
         </div>
         <div class="news-item">
-          <a href="https://news.cnyes.com/news/id/6505397" target="_blank" rel="noopener">盤中速報 - 超微半導體(AMD-US)大漲5.03%，報538.28美元</a>
-          <div class="news-meta"><span class="source-tag">鉅亨網</span>06/18 23:27</div>
-        </div>
-        <div class="news-item">
-          <a href="https://news.cnyes.com/news/id/6505392" target="_blank" rel="noopener">盤中速報 - 台積電ADR(TSM-US)大漲5.03%，報453.89美元</a>
-          <div class="news-meta"><span class="source-tag">鉅亨網</span>06/18 23:05</div>
-        </div>
-        <div class="news-item">
           <a href="https://news.cnyes.com/news/id/6505337" target="_blank" rel="noopener">華許效應發酵？高盛預測短債震盪加劇、長債吸引力提升</a>
           <div class="news-meta"><span class="source-tag">鉅亨網</span>06/18 23:00</div>
         </div>
         <div class="news-item">
-          <a href="https://news.cnyes.com/news/id/6505385" target="_blank" rel="noopener">盤中速報 - 亞德諾(ADI-US)大漲5.05%，報435.38美元</a>
-          <div class="news-meta"><span class="source-tag">鉅亨網</span>06/18 22:49</div>
+          <a href="https://money.udn.com/money/story/5612/9575744" target="_blank" rel="noopener">日立冷氣25連霸信譽品牌白金獎 空調類唯一最高榮譽</a>
+          <div class="news-meta"><span class="source-tag">經濟日報</span>06/19 03:29</div>
         </div>
         <div class="news-item">
-          <a href="https://news.cnyes.com/news/id/6505380" target="_blank" rel="noopener">鉅亨速報 - Factset 最新調查：Figma, Inc. Class AFIG-US的目標價調升至33元，幅度約10%</a>
-          <div class="news-meta"><span class="source-tag">鉅亨網</span>06/18 22:15</div>
+          <a href="https://money.udn.com/money/story/5612/9575789" target="_blank" rel="noopener">邁威爾預定台積產能 斥資10億美元</a>
+          <div class="news-meta"><span class="source-tag">經濟日報</span>06/19 02:16</div>
+        </div>
+        <div class="news-item">
+          <a href="https://money.udn.com/money/story/11162/9575917" target="_blank" rel="noopener">鴻海董座預測 2030年全球 AI 資料中心規模衝1.6兆美元</a>
+          <div class="news-meta"><span class="source-tag">經濟日報</span>06/19 01:20</div>
+        </div>
+        <div class="news-item">
+          <a href="https://money.udn.com/money/story/5612/9575882" target="_blank" rel="noopener">光罩改選董事 華新集團拿一席</a>
+          <div class="news-meta"><span class="source-tag">經濟日報</span>06/19 01:14</div>
+        </div>
+        <div class="news-item">
+          <a href="https://money.udn.com/money/story/11162/9575878" target="_blank" rel="noopener">鴻海董事長談工廠機器人 組裝最困難</a>
+          <div class="news-meta"><span class="source-tag">經濟日報</span>06/19 01:13</div>
+        </div>
+        <div class="news-item">
+          <a href="https://money.udn.com/money/story/5612/9575828" target="_blank" rel="noopener">吳東亮續掌工商協進會</a>
+          <div class="news-meta"><span class="source-tag">經濟日報</span>06/19 01:11</div>
+        </div>
+        <div class="news-item">
+          <a href="https://money.udn.com/money/story/5612/9575797" target="_blank" rel="noopener">3C通膨 手機市場洗牌</a>
+          <div class="news-meta"><span class="source-tag">經濟日報</span>06/19 01:01</div>
+        </div>
+        <div class="news-item">
+          <a href="https://money.udn.com/money/story/10871/9575985" target="_blank" rel="noopener">台灣數位醫療進軍北歐市場 台芬簽署 MOU 打造數位健康創新合作新局</a>
+          <div class="news-meta"><span class="source-tag">經濟日報</span>06/19 00:53</div>
         </div>
         <div class="news-item">
           <a href="https://money.udn.com/money/story/10871/9575850" target="_blank" rel="noopener">陽明：貨櫃海運榮景Q3續航 價量齊揚盛況有望接力演出</a>
@@ -149,121 +181,89 @@
           <a href="https://money.udn.com/money/story/10871/9575860" target="_blank" rel="noopener">SCFI連八漲 四大航線運價齊揚</a>
           <div class="news-meta"><span class="source-tag">經濟日報</span>06/19 00:04</div>
         </div>
-        <div class="news-item">
-          <a href="https://money.udn.com/money/story/10871/9575851" target="_blank" rel="noopener">航空雙雄降貨運燃油附加費</a>
-          <div class="news-meta"><span class="source-tag">經濟日報</span>06/19 00:03</div>
-        </div>
-        <div class="news-item">
-          <a href="https://money.udn.com/money/story/10871/9575773" target="_blank" rel="noopener">中信銀報告：不動產借名登記成家族治理挑戰</a>
-          <div class="news-meta"><span class="source-tag">經濟日報</span>06/18 23:02</div>
-        </div>
-        <div class="news-item">
-          <a href="https://money.udn.com/money/story/11162/9575758" target="_blank" rel="noopener">空污法修正案可能影響4成供電　能源署盼維持現行條文</a>
-          <div class="news-meta"><span class="source-tag">經濟日報</span>06/18 22:54</div>
-        </div>
-        <div class="news-item">
-          <a href="https://money.udn.com/money/story/5612/9575737" target="_blank" rel="noopener">理想汽車發表5奈米晶片 台積電代工</a>
-          <div class="news-meta"><span class="source-tag">經濟日報</span>06/18 22:31</div>
-        </div>
-        <div class="news-item">
-          <a href="https://money.udn.com/money/story/5612/9575712" target="_blank" rel="noopener">端午連假安防需求升溫 新光保全AI監控24小時智慧守護</a>
-          <div class="news-meta"><span class="source-tag">經濟日報</span>06/18 22:25</div>
-        </div>
-        <div class="news-item">
-          <a href="https://money.udn.com/money/story/11162/9575717" target="_blank" rel="noopener">區域製造時代來了 劉揚偉為何要在海外打造 TEEMA 科學園區？</a>
-          <div class="news-meta"><span class="source-tag">經濟日報</span>06/18 22:23</div>
-        </div>
-        <div class="news-item">
-          <a href="https://money.udn.com/money/story/11162/9575707" target="_blank" rel="noopener">華星光電衝刺噴墨印刷OLED面板　拚打破韓廠獨大局面</a>
-          <div class="news-meta"><span class="source-tag">經濟日報</span>06/18 22:12</div>
-        </div>
-        <div class="news-item">
-          <a href="https://money.udn.com/money/story/5612/9575688" target="_blank" rel="noopener">一粒麥子基金會攜手7-ELEVEN 關懷小隊長喻虹淵號召零錢捐守護長輩</a>
-          <div class="news-meta"><span class="source-tag">經濟日報</span>06/18 22:11</div>
-        </div>
       </div>
       <div class="news-col">
         <div class="col-header"><span class="flag">🇺🇸</span> 美股新聞</div>
         
         <div class="news-item">
-          <a href="https://www.marketwatch.com/story/these-stocks-are-in-trouble-now-that-kevin-warsh-removed-the-markets-guardrails-f7f1e51c?mod=mw_rss_topstories" target="_blank" rel="noopener">These stocks are in trouble now that Kevin Warsh removed the market’s guardrails</a>
-          <div class="news-meta"><span class="source-tag">MarketWatch</span>06/19 00:19</div>
+          <a href="https://www.marketwatch.com/story/spacex-is-vastly-more-expensive-than-any-stock-in-the-s-p-500-fueled-by-fomo-mentality-eb61cd69?mod=mw_rss_topstories" target="_blank" rel="noopener">SpaceX is vastly more expensive than any stock in the S&amp;P 500, fueled by ‘FOMO’ mentality</a>
+          <div class="news-meta"><span class="source-tag">MarketWatch</span>06/19 06:03</div>
         </div>
         <div class="news-item">
-          <a href="https://www.marketwatch.com/story/fed-chair-kevin-warsh-wants-to-get-inflation-under-control-that-could-be-bad-news-for-home-buyers-seeking-lower-mortgage-rates-99fb4aad?mod=mw_rss_topstories" target="_blank" rel="noopener">Fed Chair Kevin Warsh wants to get inflation under control. That could be bad news for home buyers seeking lower mortgage rates.</a>
-          <div class="news-meta"><span class="source-tag">MarketWatch</span>06/19 00:05</div>
+          <a href="https://www.marketwatch.com/story/intel-shares-rally-as-trump-says-company-will-build-chips-for-apple-in-the-u-s-c72d8c88?mod=mw_rss_topstories" target="_blank" rel="noopener">Intel’s stock jumps 11% — even as analysts say new Apple chip deal might start small</a>
+          <div class="news-meta"><span class="source-tag">MarketWatch</span>06/19 06:00</div>
         </div>
         <div class="news-item">
-          <a href="https://www.marketwatch.com/story/gen-z-needs-to-build-credit-to-start-adulting-but-half-say-they-cant-get-it-heres-how-to-start-ef3e100c?mod=mw_rss_topstories" target="_blank" rel="noopener">Gen Z’s ‘chicken before the egg’ credit problem: How to build your score when lenders keep saying no</a>
-          <div class="news-meta"><span class="source-tag">MarketWatch</span>06/18 23:38</div>
+          <a href="https://www.marketwatch.com/story/two-big-reasons-accentures-stock-is-sliding-in-the-wake-of-earnings-9353b184?mod=mw_rss_topstories" target="_blank" rel="noopener">Two big reasons Accenture’s stock is sliding in the wake of earnings</a>
+          <div class="news-meta"><span class="source-tag">MarketWatch</span>06/19 05:58</div>
         </div>
         <div class="news-item">
-          <a href="https://www.marketwatch.com/story/my-child-was-given-a-summer-cabin-should-i-pay-for-the-10-000-a-year-maintenance-and-taxes-5dc5cace?mod=mw_rss_topstories" target="_blank" rel="noopener">My child was given a summer cabin. Should I pay for the $10,000-a-year maintenance and taxes?</a>
-          <div class="news-meta"><span class="source-tag">MarketWatch</span>06/18 23:30</div>
+          <a href="https://www.marketwatch.com/story/microns-stock-is-on-the-rise-even-apple-isnt-safe-from-ballooning-memory-chip-costs-ddd04d74?mod=mw_rss_topstories" target="_blank" rel="noopener">Micron’s stock is on the rise. Even Apple isn’t safe from ballooning memory-chip costs.</a>
+          <div class="news-meta"><span class="source-tag">MarketWatch</span>06/19 05:56</div>
         </div>
         <div class="news-item">
-          <a href="https://www.marketwatch.com/story/trumps-iran-agreement-changes-the-game-for-investors-these-are-the-two-sectors-to-buy-right-now-0705bc62?mod=mw_rss_topstories" target="_blank" rel="noopener">Trump’s Iran agreement is a massive buy signal for stocks</a>
-          <div class="news-meta"><span class="source-tag">MarketWatch</span>06/18 23:06</div>
+          <a href="https://www.marketwatch.com/story/spacex-options-volume-explodes-as-trading-kicks-off-here-is-a-low-risk-strategy-to-play-the-massive-surge-425f9b51?mod=mw_rss_topstories" target="_blank" rel="noopener">SpaceX options volume explodes as trading kicks off. Here is a low-risk strategy to play the massive surge.</a>
+          <div class="news-meta"><span class="source-tag">MarketWatch</span>06/19 05:36</div>
+        </div>
+        <div class="news-item">
+          <a href="https://www.marketwatch.com/story/these-stocks-are-in-trouble-now-that-kevin-warsh-removed-the-markets-guardrails-f7f1e51c?mod=mw_rss_topstories" target="_blank" rel="noopener">These stocks are in trouble after Fed Chair Kevin Warsh removed the market’s guardrails</a>
+          <div class="news-meta"><span class="source-tag">MarketWatch</span>06/19 05:35</div>
+        </div>
+        <div class="news-item">
+          <a href="https://www.marketwatch.com/story/memory-stocks-are-having-their-best-year-ever-why-do-they-still-look-so-cheap-a506466d?mod=mw_rss_topstories" target="_blank" rel="noopener">Micron, other memory stocks are having their best year ever. Why do they still look so cheap?</a>
+          <div class="news-meta"><span class="source-tag">MarketWatch</span>06/19 05:14</div>
+        </div>
+        <div class="news-item">
+          <a href="https://www.marketwatch.com/story/dollar-touches-highest-level-in-more-than-a-year-why-this-latest-rally-might-be-overdone-28194ce1?mod=mw_rss_topstories" target="_blank" rel="noopener">Dollar touches highest level in more than a year. Why this latest rally might be overdone.</a>
+          <div class="news-meta"><span class="source-tag">MarketWatch</span>06/19 05:14</div>
+        </div>
+        <div class="news-item">
+          <a href="https://www.marketwatch.com/story/my-two-sons-will-inherit-a-30-000-annuity-from-their-grandmother-what-should-i-do-with-the-money-8882f396?mod=mw_rss_topstories" target="_blank" rel="noopener">My two sons will inherit a $30,000 annuity from their grandmother. What should I do with the money?</a>
+          <div class="news-meta"><span class="source-tag">MarketWatch</span>06/19 04:30</div>
         </div>
         <div class="news-item">
           <a href="https://www.marketwatch.com/story/ill-probably-be-working-until-i-die-im-60-work-as-a-restaurant-server-and-have-2-000-in-an-ira-who-can-help-me-6e36253a?mod=mw_rss_topstories" target="_blank" rel="noopener">‘I’ll probably be working until I die’: I’m 60, work as a waiter and have $2,000 in a Roth IRA. What will happen to me?</a>
-          <div class="news-meta"><span class="source-tag">MarketWatch</span>06/18 22:45</div>
+          <div class="news-meta"><span class="source-tag">MarketWatch</span>06/19 04:05</div>
         </div>
         <div class="news-item">
-          <a href="https://www.marketwatch.com/story/my-husband-died-when-i-was-38-leaving-me-with-four-kids-who-each-received-social-security-im-now-60-when-do-i-claim-dc18b96e?mod=mw_rss_topstories" target="_blank" rel="noopener">My husband died when I was 38, leaving me with four kids who each received Social Security. I’m now 60. When do I claim?</a>
-          <div class="news-meta"><span class="source-tag">MarketWatch</span>06/18 22:43</div>
-        </div>
-        <div class="news-item">
-          <a href="https://www.marketwatch.com/story/spacex-is-vastly-more-expensive-than-any-stock-in-the-s-p-500-fueled-by-fomo-mentality-eb61cd69?mod=mw_rss_topstories" target="_blank" rel="noopener">SpaceX is vastly more expensive than any stock in the S&amp;P 500, fueled by ‘FOMO’ mentality</a>
-          <div class="news-meta"><span class="source-tag">MarketWatch</span>06/18 22:38</div>
-        </div>
-        <div class="news-item">
-          <a href="https://www.marketwatch.com/story/a-billion-dollar-server-company-loses-more-than-40-of-its-value-following-short-seller-report-158a1394?mod=mw_rss_topstories" target="_blank" rel="noopener">A billion-dollar server company just lost more than 40% of its value following a short-seller report</a>
-          <div class="news-meta"><span class="source-tag">MarketWatch</span>06/18 22:34</div>
-        </div>
-        <div class="news-item">
-          <a href="https://www.marketwatch.com/story/we-own-our-home-outright-i-am-67-and-earn-100-000-do-i-take-my-30-000-social-security-now-or-wait-bbe1e123?mod=mw_rss_topstories" target="_blank" rel="noopener">‘We own our home outright’: I am 67 and earn $100,000. Do I take my $30,000-a-year Social Security now or wait?</a>
-          <div class="news-meta"><span class="source-tag">MarketWatch</span>06/18 22:19</div>
-        </div>
-        <div class="news-item">
-          <a href="https://www.cnbc.com/2026/06/18/oil-prices-today-wti-brent.html" target="_blank" rel="noopener">Oil prices fall after Vance says more than 12 million barrels exit Strait of Hormuz</a>
-          <div class="news-meta"><span class="source-tag">CNBC Markets</span>06/19 00:43</div>
+          <a href="https://www.cnbc.com/2026/06/18/the-average-spacex-buyer-post-ipo-is-almost-under-water-after-two-day-slide.html" target="_blank" rel="noopener">The average SpaceX buyer post-IPO is almost under water after two-day slide</a>
+          <div class="news-meta"><span class="source-tag">CNBC Markets</span>06/19 04:10</div>
         </div>
         <div class="news-item">
           <a href="https://www.cnbc.com/2026/06/18/vance-iran-war-memo-oil-gas.html" target="_blank" rel="noopener">Vance says U.S. isn’t giving Iran ‘a cent’ as he defends Trump peace deal</a>
-          <div class="news-meta"><span class="source-tag">CNBC Markets</span>06/19 00:21</div>
+          <div class="news-meta"><span class="source-tag">CNBC Markets</span>06/19 04:14</div>
+        </div>
+        <div class="news-item">
+          <a href="https://www.cnbc.com/2026/06/18/markets-are-set-for-a-much-more-hawkish-warsh-fed-than-expected.html" target="_blank" rel="noopener">Markets are set for a much more hawkish Warsh Fed than expected</a>
+          <div class="news-meta"><span class="source-tag">CNBC Markets</span>06/19 02:04</div>
+        </div>
+        <div class="news-item">
+          <a href="https://www.cnbc.com/2026/06/18/trump-student-loan-autopay-interest-rate-discount.html" target="_blank" rel="noopener">Trump administration temporarily cuts student loan interest rates for borrowers on autopay</a>
+          <div class="news-meta"><span class="source-tag">CNBC Markets</span>06/19 05:42</div>
+        </div>
+        <div class="news-item">
+          <a href="https://www.cnbc.com/2026/06/18/next-weeks-inflation-data-is-vitally-important-whats-ahead-for-the-market.html" target="_blank" rel="noopener">Next week's inflation data just got even more important. Here's what's ahead for the market</a>
+          <div class="news-meta"><span class="source-tag">CNBC Markets</span>06/19 04:48</div>
+        </div>
+        <div class="news-item">
+          <a href="https://www.cnbc.com/2026/06/17/stock-market-today-live-updates.html" target="_blank" rel="noopener">S&amp;P 500 closes higher, Nasdaq climbs nearly 2% as chips fuel comeback from Fed sell-off: Live updates</a>
+          <div class="news-meta"><span class="source-tag">CNBC Markets</span>06/19 04:32</div>
+        </div>
+        <div class="news-item">
+          <a href="https://www.cnbc.com/2026/06/18/amazon-engineers-ai-data-center-opposition.html" target="_blank" rel="noopener">Amazon investigating engineers who criticized AI data center expansion</a>
+          <div class="news-meta"><span class="source-tag">CNBC Markets</span>06/19 03:47</div>
+        </div>
+        <div class="news-item">
+          <a href="https://www.cnbc.com/2026/06/18/us-navy-blockade-iran-trump-oil.html" target="_blank" rel="noopener">U.S. Navy ends blockade of Iran's ports and coastal areas</a>
+          <div class="news-meta"><span class="source-tag">CNBC Markets</span>06/19 03:29</div>
+        </div>
+        <div class="news-item">
+          <a href="https://www.cnbc.com/2026/06/18/waymo-nhtsa-voluntary-recall-robotaxis-entered-freeway-construction-zones.html" target="_blank" rel="noopener">Waymo recalls about 3,900 robotaxis after some drove into 'freeway construction zones'</a>
+          <div class="news-meta"><span class="source-tag">CNBC Markets</span>06/19 05:57</div>
         </div>
         <div class="news-item">
           <a href="https://www.cnbc.com/2026/06/18/trump-federal-reserve-lisa-cook-security-filing.html" target="_blank" rel="noopener">Trump bid to fire Fed's Lisa Cook cost her more than $1M in legal, security costs: Filing</a>
-          <div class="news-meta"><span class="source-tag">CNBC Markets</span>06/18 23:37</div>
-        </div>
-        <div class="news-item">
-          <a href="https://www.cnbc.com/2026/06/17/stock-market-today-live-updates.html" target="_blank" rel="noopener">Stocks rebound from Fed sell-off as oil prices slide, chip stocks rally: Live updates</a>
-          <div class="news-meta"><span class="source-tag">CNBC Markets</span>06/19 00:37</div>
-        </div>
-        <div class="news-item">
-          <a href="https://www.cnbc.com/2026/06/18/opec-iea-supply-glut-forecast-critical-strait-hormuz-reopens-oil.html" target="_blank" rel="noopener">OPEC chief dismisses IEA supply glut forecast as 'critical' Strait of Hormuz reopens</a>
-          <div class="news-meta"><span class="source-tag">CNBC Markets</span>06/18 23:19</div>
-        </div>
-        <div class="news-item">
-          <a href="https://www.cnbc.com/2026/06/18/the-charts-in-this-car-stock-look-attractive-after-months-of-trading-in-a-range-says-jay-woods.html" target="_blank" rel="noopener">The charts in this car stock look attractive after months of trading in a range, says Jay Woods</a>
-          <div class="news-meta"><span class="source-tag">CNBC Markets</span>06/19 00:23</div>
-        </div>
-        <div class="news-item">
-          <a href="https://www.cnbc.com/2026/06/18/spacex-stock-elon-musk-rally-cools.html" target="_blank" rel="noopener">SpaceX stock sinks 8%, continuing to cool after three-day rally</a>
-          <div class="news-meta"><span class="source-tag">CNBC Markets</span>06/18 23:33</div>
-        </div>
-        <div class="news-item">
-          <a href="https://www.cnbc.com/2026/06/18/5-wild-spacex-stats-from-the-companys-first-week-on-the-nasdaq.html" target="_blank" rel="noopener">Bonkers SpaceX stats that show how staggering the money movement has been</a>
-          <div class="news-meta"><span class="source-tag">CNBC Markets</span>06/18 23:03</div>
-        </div>
-        <div class="news-item">
-          <a href="https://www.cnbc.com/2026/06/18/prediction-market-ban-congress-house-stock-bryan-steil.html" target="_blank" rel="noopener">GOP Rep. Steil pushes bill curbing members of Congress from prediction market betting</a>
-          <div class="news-meta"><span class="source-tag">CNBC Markets</span>06/18 22:30</div>
-        </div>
-        <div class="news-item">
-          <a href="https://www.cnbc.com/2026/06/18/trump-intel-apple-chip-design-deal.html" target="_blank" rel="noopener">Intel gains 8% after Trump says company will partner with Apple on U.S. chip design</a>
-          <div class="news-meta"><span class="source-tag">CNBC Markets</span>06/18 23:36</div>
+          <div class="news-meta"><span class="source-tag">CNBC Markets</span>06/19 01:24</div>
         </div>
       </div>
     </div>
