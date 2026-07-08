@@ -55,16 +55,16 @@
 <body>
   <header>
     <h1>📈 台美股 Dashboard</h1>
-    <span class="updated">新聞更新：2026-07-08 15:53 (台北) &nbsp;<span id="live-dot" style="display:none;color:#4ade80;font-size:.85rem;">● 指數即時</span></span>
+    <span class="updated">新聞更新：2026-07-08 23:39 (台北) &nbsp;<span id="live-dot" style="display:none;color:#4ade80;font-size:.85rem;">● 指數即時</span></span>
   </header>
   <div class="main">
 
     <div class="section-label">🇹🇼 台灣市場指數</div>
     <div class="indices">
-        <div class="index-card" id="card-TWII">
+        <div class="index-card up-tw" id="card-TWII" data-region="tw">
           <div class="index-name">台股加權指數</div>
-          <div class="index-price na" id="price-TWII">N/A</div>
-          <div class="index-change" id="change-TWII"></div>
+          <div class="index-price" id="price-TWII">45,734.41</div>
+          <div class="index-change" id="change-TWII">▲ 255.30 (+0.56%)</div>
         </div>
         <div class="index-card up-tw" id="card-TWOII" data-region="tw">
           <div class="index-name">櫃買指數</div>
@@ -76,23 +76,23 @@
     <div class="indices">
         <div class="index-card down" id="card-DJI" data-region="us">
           <div class="index-name">道瓊工業指數</div>
-          <div class="index-price" id="price-DJI">52,925.15</div>
-          <div class="index-change" id="change-DJI">▼ 130.76 (-0.25%)</div>
+          <div class="index-price" id="price-DJI">52,095.09</div>
+          <div class="index-change" id="change-DJI">▼ 830.06 (-1.57%)</div>
         </div>
         <div class="index-card down" id="card-GSPC" data-region="us">
           <div class="index-name">S&P 500</div>
-          <div class="index-price" id="price-GSPC">7,503.85</div>
-          <div class="index-change" id="change-GSPC">▼ 33.58 (-0.45%)</div>
+          <div class="index-price" id="price-GSPC">7,432.11</div>
+          <div class="index-change" id="change-GSPC">▼ 71.74 (-0.96%)</div>
         </div>
         <div class="index-card down" id="card-IXIC" data-region="us">
           <div class="index-name">那斯達克</div>
-          <div class="index-price" id="price-IXIC">25,818.69</div>
-          <div class="index-change" id="change-IXIC">▼ 302.47 (-1.16%)</div>
+          <div class="index-price" id="price-IXIC">25,572.10</div>
+          <div class="index-change" id="change-IXIC">▼ 246.59 (-0.96%)</div>
         </div>
         <div class="index-card down" id="card-RUT" data-region="us">
           <div class="index-name">羅素 2000</div>
-          <div class="index-price" id="price-RUT">2,982.49</div>
-          <div class="index-change" id="change-RUT">▼ 27.05 (-0.90%)</div>
+          <div class="index-price" id="price-RUT">2,933.40</div>
+          <div class="index-change" id="change-RUT">▼ 49.09 (-1.65%)</div>
         </div></div>
 
     <hr class="divider">
@@ -102,168 +102,168 @@
         <div class="col-header"><span class="flag">🇹🇼</span> 台股新聞</div>
         
         <div class="news-item">
-          <a href="https://news.cnyes.com/news/id/6526941" target="_blank" rel="noopener">SK海力士赴美上市路演：AI時代最稀缺的並非GPU 而是HBM</a>
-          <div class="news-meta"><span class="source-tag">鉅亨網</span>07/08 13:50</div>
+          <a href="https://news.cnyes.com/news/id/6527957" target="_blank" rel="noopener">AI股王跌落神壇？輝達市值蒸發1兆美元 估值竟比標普500便宜</a>
+          <div class="news-meta"><span class="source-tag">鉅亨網</span>07/08 23:00</div>
         </div>
         <div class="news-item">
-          <a href="https://news.cnyes.com/news/id/6526760" target="_blank" rel="noopener">OpenAI再失一名元老！首席未來學家月底離職、服務逾9年、敢跟馬斯克拍桌</a>
-          <div class="news-meta"><span class="source-tag">鉅亨網</span>07/08 13:50</div>
+          <a href="https://news.cnyes.com/news/id/6528016" target="_blank" rel="noopener">盤中速報 - Palo Alto Networks Inc(PANW-US)大跌5.04%，報320.05美元</a>
+          <div class="news-meta"><span class="source-tag">鉅亨網</span>07/08 22:34</div>
         </div>
         <div class="news-item">
-          <a href="https://news.cnyes.com/news/id/6521926" target="_blank" rel="noopener">野村投信：2026年下半年台股展望 AI驅動基本面續強　留意通膨與地緣政治變數</a>
-          <div class="news-meta"><span class="source-tag">鉅亨網</span>07/08 13:44</div>
+          <a href="https://news.cnyes.com/news/id/6527977" target="_blank" rel="noopener">IMF下修今年全球經濟成長至3% AI熱潮抵銷中東戰火衝擊</a>
+          <div class="news-meta"><span class="source-tag">鉅亨網</span>07/08 22:30</div>
         </div>
         <div class="news-item">
-          <a href="https://news.cnyes.com/news/id/6526963" target="_blank" rel="noopener">〈焦點股〉光通訊股抱團跌深反彈 聯亞、上詮聯袂亮燈漲停</a>
-          <div class="news-meta"><span class="source-tag">鉅亨網</span>07/08 13:31</div>
+          <a href="https://news.cnyes.com/news/id/6528011" target="_blank" rel="noopener">鉅亨速報 - Factset 最新調查：Huntington Ingalls Industries IncHII-US的目標價調降至381元，幅度約3.18%</a>
+          <div class="news-meta"><span class="source-tag">鉅亨網</span>07/08 22:15</div>
         </div>
         <div class="news-item">
-          <a href="https://news.cnyes.com/news/id/6526945" target="_blank" rel="noopener">遭「混」巴西豆出包？三級品管破功？石崇良允改革：增設第三方強制抽驗、追蹤者條款</a>
-          <div class="news-meta"><span class="source-tag">鉅亨網</span>07/08 13:29</div>
+          <a href="https://news.cnyes.com/news/id/6528010" target="_blank" rel="noopener">鉅亨速報 - Factset 最新調查：費哲金融服務FISV-US的目標價調降至63元，幅度約3.08%</a>
+          <div class="news-meta"><span class="source-tag">鉅亨網</span>07/08 22:15</div>
         </div>
         <div class="news-item">
-          <a href="https://news.cnyes.com/news/id/6526931" target="_blank" rel="noopener">威剛併購加持 琉園一度爆量飆漲停</a>
-          <div class="news-meta"><span class="source-tag">鉅亨網</span>07/08 13:27</div>
+          <a href="https://news.cnyes.com/news/id/6528009" target="_blank" rel="noopener">鉅亨速報 - Factset 最新調查：邀請回家(INVH-US)EPS預估下修至0.75元，預估目標價為32.00元</a>
+          <div class="news-meta"><span class="source-tag">鉅亨網</span>07/08 22:15</div>
         </div>
         <div class="news-item">
-          <a href="https://news.cnyes.com/news/id/6526949" target="_blank" rel="noopener">〈房產〉豪宅交易榜 陶朱隱園登2026年來豪宅總價王 信義聯勤暫居坪價王</a>
-          <div class="news-meta"><span class="source-tag">鉅亨網</span>07/08 13:26</div>
+          <a href="https://news.cnyes.com/news/id/6528008" target="_blank" rel="noopener">鉅亨速報 - Factset 最新調查：Klarna Group PlcKLAR-US的目標價調升至21.5元，幅度約4.88%</a>
+          <div class="news-meta"><span class="source-tag">鉅亨網</span>07/08 22:15</div>
         </div>
         <div class="news-item">
-          <a href="https://news.cnyes.com/news/id/6526751" target="_blank" rel="noopener">三星財報亮眼卻是「循環盡頭」 大摩唱衰估值再殺四成</a>
-          <div class="news-meta"><span class="source-tag">鉅亨網</span>07/08 13:20</div>
+          <a href="https://news.cnyes.com/news/id/6528007" target="_blank" rel="noopener">鉅亨速報 - Factset 最新調查：普徠仕集團TROW-US的目標價調升至105元，幅度約6.6%</a>
+          <div class="news-meta"><span class="source-tag">鉅亨網</span>07/08 22:15</div>
         </div>
         <div class="news-item">
-          <a href="https://news.cnyes.com/news/id/6526836" target="_blank" rel="noopener">從自動駕駛到物理AI！物理AI第一股Momenta今登陸港股 開盤飆逾6% 市值突破710億港元</a>
-          <div class="news-meta"><span class="source-tag">鉅亨網</span>07/08 13:10</div>
+          <a href="https://news.cnyes.com/news/id/6528006" target="_blank" rel="noopener">鉅亨速報 - Factset 最新調查：JB亨特運輸服務JBHT-US的目標價調升至265元，幅度約3.92%</a>
+          <div class="news-meta"><span class="source-tag">鉅亨網</span>07/08 22:15</div>
         </div>
         <div class="news-item">
-          <a href="https://news.cnyes.com/news/id/6526917" target="_blank" rel="noopener">食安風暴延燒！立委秀論文狠酸食藥署長「預言」成真  石崇良親上火線說明</a>
-          <div class="news-meta"><span class="source-tag">鉅亨網</span>07/08 13:09</div>
+          <a href="https://news.cnyes.com/news/id/6528005" target="_blank" rel="noopener">鉅亨速報 - Factset 最新調查：博格華納BWA-US的目標價調升至79.5元，幅度約3.92%</a>
+          <div class="news-meta"><span class="source-tag">鉅亨網</span>07/08 22:15</div>
         </div>
         <div class="news-item">
-          <a href="https://money.udn.com/money/story/10871/9615234" target="_blank" rel="noopener">新光三越證實3日完成北車 ROT 案簽約 改裝採分區分階段推進</a>
-          <div class="news-meta"><span class="source-tag">經濟日報</span>07/08 15:41</div>
+          <a href="https://money.udn.com/money/story/5612/9615908" target="_blank" rel="noopener">快訊／漢來海港、漢來蔬食也中鏢！毒油案擴大　228字聲明曝光</a>
+          <div class="news-meta"><span class="source-tag">經濟日報</span>07/08 21:35</div>
         </div>
         <div class="news-item">
-          <a href="https://money.udn.com/money/story/10871/9615228" target="_blank" rel="noopener">林佳龍會晤 IPAC 代表 籲民主夥伴共同因應大陸混合威脅與跨國鎮壓</a>
-          <div class="news-meta"><span class="source-tag">經濟日報</span>07/08 15:39</div>
+          <a href="https://money.udn.com/money/story/5612/9615958" target="_blank" rel="noopener">東方風能與允能風電完成長期 CTV 運維合約簽約 擴大運維版圖</a>
+          <div class="news-meta"><span class="source-tag">經濟日報</span>07/08 21:34</div>
         </div>
         <div class="news-item">
-          <a href="https://money.udn.com/money/story/5612/9615223" target="_blank" rel="noopener">新光三越證實北車 ROT 案完成簽約 25日接手營運、改裝採分區分期推進</a>
-          <div class="news-meta"><span class="source-tag">經濟日報</span>07/08 15:37</div>
+          <a href="https://money.udn.com/money/story/11162/9615956" target="_blank" rel="noopener">ADI 併購 Empower 台積電子公司處分持股 不影響損益</a>
+          <div class="news-meta"><span class="source-tag">經濟日報</span>07/08 21:30</div>
         </div>
         <div class="news-item">
-          <a href="https://money.udn.com/money/story/10871/9615222" target="_blank" rel="noopener">致癌油品延燒 卓揆：下階段政府工作是確保供應穩定及價格平穩</a>
-          <div class="news-meta"><span class="source-tag">經濟日報</span>07/08 15:37</div>
+          <a href="https://money.udn.com/money/story/5612/9615892" target="_blank" rel="noopener">裁員並導入AI較划算？這些企業後悔了！這家銀行認錯留人、科技廠增加新鮮人招募</a>
+          <div class="news-meta"><span class="source-tag">經濟日報</span>07/08 20:57</div>
         </div>
         <div class="news-item">
-          <a href="https://money.udn.com/money/story/11162/9615217" target="_blank" rel="noopener">國發會攜櫃買辦 Demo Show 12家新創對接創投資金</a>
-          <div class="news-meta"><span class="source-tag">經濟日報</span>07/08 15:37</div>
+          <a href="https://money.udn.com/money/story/5612/9615869" target="_blank" rel="noopener">法說會前溫馨一幕！魏哲家率台積電高層北上 為95歲張忠謀提前祝壽</a>
+          <div class="news-meta"><span class="source-tag">經濟日報</span>07/08 20:48</div>
         </div>
         <div class="news-item">
-          <a href="https://money.udn.com/money/story/11162/9615215" target="_blank" rel="noopener">企托新制逾750間企業申請 延長至9月30日截止</a>
-          <div class="news-meta"><span class="source-tag">經濟日報</span>07/08 15:37</div>
+          <a href="https://money.udn.com/money/story/5612/9615861" target="_blank" rel="noopener">鴻海挑選新創四大心法公開！劉揚偉談自身創業經驗與投資「失敗學」</a>
+          <div class="news-meta"><span class="source-tag">經濟日報</span>07/08 20:38</div>
         </div>
         <div class="news-item">
-          <a href="https://money.udn.com/money/story/11162/9615206" target="_blank" rel="noopener">瓜地馬拉推動「晶片之路」 賴總統盼台商以此布局美洲市場</a>
-          <div class="news-meta"><span class="source-tag">經濟日報</span>07/08 15:33</div>
+          <a href="https://money.udn.com/money/story/5612/9615804" target="_blank" rel="noopener">台中吳姓建築師墜樓亡 建築師吳六合喊「不是我」</a>
+          <div class="news-meta"><span class="source-tag">經濟日報</span>07/08 20:32</div>
         </div>
         <div class="news-item">
-          <a href="https://money.udn.com/money/story/11162/9615204" target="_blank" rel="noopener">嘉義無人機物流計畫7月底驗收 為全台首次商轉</a>
-          <div class="news-meta"><span class="source-tag">經濟日報</span>07/08 15:32</div>
+          <a href="https://money.udn.com/money/story/5612/9615845" target="_blank" rel="noopener">下一張護國王牌？嘉義小公司2,000架無人機，加入烏俄戰爭！雷虎、和碩、鴻海...非紅無人機台鏈點將</a>
+          <div class="news-meta"><span class="source-tag">經濟日報</span>07/08 20:30</div>
         </div>
         <div class="news-item">
-          <a href="https://money.udn.com/money/story/10871/9615197" target="_blank" rel="noopener">冠星-KY今年拚賺1個股本　擬發動併購布局下游成衣</a>
-          <div class="news-meta"><span class="source-tag">經濟日報</span>07/08 15:30</div>
+          <a href="https://money.udn.com/money/story/5612/9615817" target="_blank" rel="noopener">股價5個月飆150%！PCB老廠如何靠「18位大老闆輪流請吃飯」，敲開晶圓代工大廠神祕大門？</a>
+          <div class="news-meta"><span class="source-tag">經濟日報</span>07/08 20:09</div>
         </div>
         <div class="news-item">
-          <a href="https://money.udn.com/money/story/11162/9615186" target="_blank" rel="noopener">跨國不斷線 eduroam 打通學術漫遊新里程</a>
-          <div class="news-meta"><span class="source-tag">經濟日報</span>07/08 15:26</div>
+          <a href="https://money.udn.com/money/story/10871/9615733" target="_blank" rel="noopener">農林處分苗栗216筆土地 總交易26億元、估貢獻14億元利益</a>
+          <div class="news-meta"><span class="source-tag">經濟日報</span>07/08 19:24</div>
         </div>
       </div>
       <div class="news-col">
         <div class="col-header"><span class="flag">🇺🇸</span> 美股新聞</div>
         
         <div class="news-item">
-          <a href="https://www.marketwatch.com/story/plot-twist-gen-z-is-buying-houses-after-all-ab247e1f?mod=mw_rss_topstories" target="_blank" rel="noopener">Plot twist: Gen Z is buying houses after all. Here’s how they’re doing it.</a>
-          <div class="news-meta"><span class="source-tag">MarketWatch</span>07/08 09:06</div>
+          <a href="https://www.marketwatch.com/story/oil-prices-jump-by-the-most-in-two-months-after-trump-suggests-u-s-iran-cease-fire-is-over-9fa7caee?mod=mw_rss_topstories" target="_blank" rel="noopener">Oil prices touch two-week highs  after Trump suggests U.S.-Iran cease-fire is over</a>
+          <div class="news-meta"><span class="source-tag">MarketWatch</span>07/08 23:36</div>
         </div>
         <div class="news-item">
-          <a href="https://www.marketwatch.com/story/rivians-stock-sale-triggers-worst-rout-for-the-shares-in-nearly-two-years-6791789e?mod=mw_rss_topstories" target="_blank" rel="noopener">Rivian’s stock sale triggers worst rout for the shares in nearly two years</a>
-          <div class="news-meta"><span class="source-tag">MarketWatch</span>07/08 08:35</div>
+          <a href="https://www.marketwatch.com/story/why-the-stock-markets-biggest-laggards-might-be-your-best-defense-against-a-summer-selloff-be079d8e?mod=mw_rss_topstories" target="_blank" rel="noopener">Why the stock market’s biggest laggards might be your best defense against a summer selloff</a>
+          <div class="news-meta"><span class="source-tag">MarketWatch</span>07/08 23:02</div>
+        </div>
+        <div class="news-item">
+          <a href="https://www.marketwatch.com/story/insurance-giant-says-its-turning-to-ai-to-replace-as-many-as-1-800-jobs-13e60de2?mod=mw_rss_topstories" target="_blank" rel="noopener">Insurance giant says it’s turning to AI to replace as many as 1,800 jobs</a>
+          <div class="news-meta"><span class="source-tag">MarketWatch</span>07/08 22:54</div>
+        </div>
+        <div class="news-item">
+          <a href="https://www.marketwatch.com/story/ill-happily-wait-does-delaying-social-security-make-sense-for-high-earners-like-me-17dca69b?mod=mw_rss_topstories" target="_blank" rel="noopener">‘I’ll happily wait’: Does delaying Social Security make sense for high earners like me?</a>
+          <div class="news-meta"><span class="source-tag">MarketWatch</span>07/08 22:00</div>
         </div>
         <div class="news-item">
           <a href="https://www.marketwatch.com/story/our-family-is-broken-beyond-repair-my-brother-took-over-my-parents-finances-what-can-i-do-95239fb9?mod=mw_rss_topstories" target="_blank" rel="noopener">‘Our family is broken beyond repair’: My brother took over my parents’ finances. What can I do?</a>
-          <div class="news-meta"><span class="source-tag">MarketWatch</span>07/08 07:00</div>
+          <div class="news-meta"><span class="source-tag">MarketWatch</span>07/08 22:00</div>
         </div>
         <div class="news-item">
-          <a href="https://www.marketwatch.com/story/microns-stock-falls-as-investors-wonder-if-the-memory-market-is-near-the-top-ab2d2feb?mod=mw_rss_topstories" target="_blank" rel="noopener">Micron’s stock falls as investors wonder if the memory market is near the top</a>
-          <div class="news-meta"><span class="source-tag">MarketWatch</span>07/08 06:43</div>
+          <a href="https://www.marketwatch.com/story/i-started-retirement-with-3-million-now-im-89-and-down-to-2-million-what-if-i-get-sick-7401056a?mod=mw_rss_topstories" target="_blank" rel="noopener">I started retirement with $3 million. Now I’m 89 and down to $2 million. What if I get sick?</a>
+          <div class="news-meta"><span class="source-tag">MarketWatch</span>07/08 22:00</div>
         </div>
         <div class="news-item">
-          <a href="https://www.marketwatch.com/story/adobes-stock-is-temptingly-cheap-should-investors-bite-196258b5?mod=mw_rss_topstories" target="_blank" rel="noopener">Adobe’s stock is temptingly cheap. Should investors bite?</a>
-          <div class="news-meta"><span class="source-tag">MarketWatch</span>07/08 06:35</div>
+          <a href="https://www.marketwatch.com/story/as-a-once-hot-stock-market-tumbles-into-bear-territory-this-wall-street-bull-says-its-time-to-buy-the-dip-c8c2c72f?mod=mw_rss_topstories" target="_blank" rel="noopener">As a red-hot global stock market stumbles into bear territory, this Wall Street bull spots a dip worth buying</a>
+          <div class="news-meta"><span class="source-tag">MarketWatch</span>07/08 21:41</div>
         </div>
         <div class="news-item">
-          <a href="https://www.marketwatch.com/story/ai-related-debt-sells-off-sharply-as-amazon-borrows-another-25-billion-46928353?mod=mw_rss_topstories" target="_blank" rel="noopener">AI-related debt sells off sharply as Amazon looks to borrow another $25 billion</a>
-          <div class="news-meta"><span class="source-tag">MarketWatch</span>07/08 06:35</div>
+          <a href="https://www.marketwatch.com/story/were-spending-7-000-to-attend-7-weddings-this-year-and-thats-after-cutting-corners-8e467037?mod=mw_rss_topstories" target="_blank" rel="noopener">We’re spending $7,000 to attend 7 weddings this year — and that’s after cutting corners</a>
+          <div class="news-meta"><span class="source-tag">MarketWatch</span>07/08 21:31</div>
         </div>
         <div class="news-item">
-          <a href="https://www.marketwatch.com/story/teslas-stock-could-rise-20-thanks-to-the-potential-for-a-spacex-merger-analyst-says-0d64693e?mod=mw_rss_topstories" target="_blank" rel="noopener">Tesla’s stock could rise 20% thanks to the potential for a SpaceX merger, analyst says</a>
-          <div class="news-meta"><span class="source-tag">MarketWatch</span>07/08 06:34</div>
+          <a href="https://www.marketwatch.com/story/alibaba-just-had-its-best-day-in-10-months-is-it-time-for-china-techs-to-catch-up-8ccc3f7c?mod=mw_rss_topstories" target="_blank" rel="noopener">Alibaba just had its best day in 10 months. Is it time for China techs to catch up?</a>
+          <div class="news-meta"><span class="source-tag">MarketWatch</span>07/08 21:09</div>
         </div>
         <div class="news-item">
-          <a href="https://www.marketwatch.com/story/oil-prices-rise-as-the-u-s-cancels-irans-license-to-sell-oil-030635fc?mod=mw_rss_topstories" target="_blank" rel="noopener">Crude prices rise as U.S. launches strikes on Iran shortly after canceling its license to sell oil</a>
-          <div class="news-meta"><span class="source-tag">MarketWatch</span>07/08 06:11</div>
+          <a href="https://www.marketwatch.com/story/iran-war-will-leave-an-inflation-scar-on-the-u-s-through-2027-imf-says-909818b8?mod=mw_rss_topstories" target="_blank" rel="noopener">Iran war will leave an inflation scar on the U.S. through 2027, IMF says</a>
+          <div class="news-meta"><span class="source-tag">MarketWatch</span>07/08 21:03</div>
         </div>
         <div class="news-item">
-          <a href="https://www.marketwatch.com/story/think-the-u-s-stock-market-is-too-heavily-exposed-to-ai-its-even-worse-abroad-7524d770?mod=mw_rss_topstories" target="_blank" rel="noopener">Think the U.S. stock market is too heavily exposed to AI? It’s even worse abroad.</a>
-          <div class="news-meta"><span class="source-tag">MarketWatch</span>07/08 05:59</div>
+          <a href="https://www.cnbc.com/2026/07/08/trump-says-iran-ceasefire-is-over-after-latest-round-of-strikes.html" target="_blank" rel="noopener">Trump says Iran ceasefire is 'over,' U.S. will 'hit them hard tonight'</a>
+          <div class="news-meta"><span class="source-tag">CNBC Markets</span>07/08 21:59</div>
         </div>
         <div class="news-item">
-          <a href="https://www.marketwatch.com/story/gamestop-investors-clear-the-way-for-a-fresh-attempt-at-buying-ebay-8231871d?mod=mw_rss_topstories" target="_blank" rel="noopener">GameStop investors clear the way for a fresh attempt at buying eBay</a>
-          <div class="news-meta"><span class="source-tag">MarketWatch</span>07/08 05:37</div>
+          <a href="https://www.cnbc.com/2026/07/08/with-minutes-due-feds-family-fight-over-interest-rates-could-drag-on.html" target="_blank" rel="noopener">Fed meeting minutes to show 'family fight' over rates. The squabble could drag on for a while</a>
+          <div class="news-meta"><span class="source-tag">CNBC Markets</span>07/08 22:28</div>
         </div>
         <div class="news-item">
-          <a href="https://www.cnbc.com/2026/07/08/nato-trump-rutte-russia-iran-greenland-ukraine.html" target="_blank" rel="noopener">'Don't fool with us': NATO allies put on a united front as they prepare to meet Trump</a>
-          <div class="news-meta"><span class="source-tag">CNBC Markets</span>07/08 15:44</div>
+          <a href="https://www.cnbc.com/2026/07/08/delta-basic-business-fares.html" target="_blank" rel="noopener">Delta launches 'basic business' fares without lounge access, seat selection</a>
+          <div class="news-meta"><span class="source-tag">CNBC Markets</span>07/08 23:03</div>
         </div>
         <div class="news-item">
-          <a href="https://www.cnbc.com/2026/07/08/oil-prices-brent-wti-iran-us-hormuz.html" target="_blank" rel="noopener">Oil jumps as U.S. 'powerful strikes' against Iran risk stoke Mideast tensions</a>
-          <div class="news-meta"><span class="source-tag">CNBC Markets</span>07/08 14:52</div>
+          <a href="https://www.cnbc.com/2026/07/08/mcconnell-health-update-beshear-hospitalization-kentucky.html" target="_blank" rel="noopener">Kentucky Gov. Beshear presses McConnell to provide health update as speculation grows</a>
+          <div class="news-meta"><span class="source-tag">CNBC Markets</span>07/08 22:52</div>
         </div>
         <div class="news-item">
-          <a href="https://www.cnbc.com/2026/07/08/greenland-trump-nato-denmark.html" target="_blank" rel="noopener">Denmark PM vows to defend Greenland after Trump revives push for U.S. control</a>
-          <div class="news-meta"><span class="source-tag">CNBC Markets</span>07/08 15:01</div>
+          <a href="https://www.cnbc.com/2026/07/08/used-ev-prices-gas-war.html" target="_blank" rel="noopener">Used EVs keep getting more expensive amid Iran war, high gas prices</a>
+          <div class="news-meta"><span class="source-tag">CNBC Markets</span>07/08 23:14</div>
         </div>
         <div class="news-item">
-          <a href="https://www.cnbc.com/2026/07/08/chinese-ai-models-probe-us-lawmakers.html" target="_blank" rel="noopener">Lawmakers probe growing use of Chinese AI models in U.S. companies</a>
-          <div class="news-meta"><span class="source-tag">CNBC Markets</span>07/08 13:01</div>
+          <a href="https://www.cnbc.com/2026/07/08/one-cybersecurity-name-is-repositioning-itself-as-an-ai-play-how-to-trade-a-potential-move-higher.html" target="_blank" rel="noopener">One cybersecurity name is repositioning itself as an AI play. How to trade a potential move higher</a>
+          <div class="news-meta"><span class="source-tag">CNBC Markets</span>07/08 22:30</div>
         </div>
         <div class="news-item">
-          <a href="https://www.cnbc.com/2026/07/08/rebellions-ipo-south-korea-ai-chips.html" target="_blank" rel="noopener">Samsung-backed AI chip firm Rebellions targets IPO in South Korea next year, CEO tells CNBC</a>
-          <div class="news-meta"><span class="source-tag">CNBC Markets</span>07/08 15:34</div>
+          <a href="https://www.cnbc.com/2026/07/08/trump-e-jean-carroll-supreme-court-sex-abuse.html" target="_blank" rel="noopener">Trump opposes Carroll getting $5 million damages verdict, cites last-ditch Supreme Court bid</a>
+          <div class="news-meta"><span class="source-tag">CNBC Markets</span>07/08 18:16</div>
         </div>
         <div class="news-item">
-          <a href="https://www.cnbc.com/2026/07/07/us-strikes-iran-hormuz-ships.html" target="_blank" rel="noopener">U.S. conducts strikes on multiple Iranian targets after Hormuz Strait ship attacks, Centcom says</a>
-          <div class="news-meta"><span class="source-tag">CNBC Markets</span>07/08 15:25</div>
+          <a href="https://www.cnbc.com/2026/07/08/waymo-starts-driverless-rides-in-san-diego-las-vegas-tampa-denver.html" target="_blank" rel="noopener">Waymo starts driverless rides in four more U.S. markets as expansion accelerates</a>
+          <div class="news-meta"><span class="source-tag">CNBC Markets</span>07/08 22:00</div>
         </div>
         <div class="news-item">
-          <a href="https://www.cnbc.com/2026/07/07/iran-strait-hormuz-oil-tanker-lng.html" target="_blank" rel="noopener">Strait of Hormuz threat level raised to 'severe' after Iran attacks tankers using U.S. Navy route</a>
-          <div class="news-meta"><span class="source-tag">CNBC Markets</span>07/08 04:39</div>
+          <a href="https://www.cnbc.com/2026/07/08/social-security-trust-fund-depletion.html" target="_blank" rel="noopener">Delaying Social Security reform raises risks for bond markets and the economy, research finds</a>
+          <div class="news-meta"><span class="source-tag">CNBC Markets</span>07/08 23:11</div>
         </div>
         <div class="news-item">
-          <a href="https://www.cnbc.com/2026/07/08/dispatch-from-nato-us-strikes-iran-and-le-pen-is-back.html" target="_blank" rel="noopener">CNBC Daily Open: Dispatch from NATO, U.S. strikes Iran and Le Pen is back</a>
-          <div class="news-meta"><span class="source-tag">CNBC Markets</span>07/08 13:34</div>
-        </div>
-        <div class="news-item">
-          <a href="https://www.cnbc.com/2026/07/07/us-revokes-iran-oil-sanctions-waiver-tanker-attacks.html" target="_blank" rel="noopener">U.S. revokes Iran oil sales authorization after tanker attacks</a>
-          <div class="news-meta"><span class="source-tag">CNBC Markets</span>07/08 05:26</div>
-        </div>
-        <div class="news-item">
-          <a href="https://www.cnbc.com/2026/07/07/ukraine-won-war-russia-nato-alexander-stubb-finnish-president.html" target="_blank" rel="noopener">Ukraine has already won the war against Russia, Finnish president tells CNBC</a>
-          <div class="news-meta"><span class="source-tag">CNBC Markets</span>07/07 23:47</div>
+          <a href="https://www.cnbc.com/2026/07/08/the-american-dream-is-missing-a-key-ingredient-says-expert-without-it-life-is-pretty-grim.html" target="_blank" rel="noopener">The American Dream is missing one key ingredient, says Harvard happiness expert: Without it, 'life is pretty grim'</a>
+          <div class="news-meta"><span class="source-tag">CNBC Markets</span>07/08 22:00</div>
         </div>
       </div>
     </div>
