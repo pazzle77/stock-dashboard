@@ -55,16 +55,16 @@
 <body>
   <header>
     <h1>📈 台美股 Dashboard</h1>
-    <span class="updated">新聞更新：2026-10-21 18:27 (台北) &nbsp;<span id="live-dot" style="display:none;color:#4ade80;font-size:.85rem;">● 指數即時</span></span>
+    <span class="updated">新聞更新：2026-10-22 02:08 (台北) &nbsp;<span id="live-dot" style="display:none;color:#4ade80;font-size:.85rem;">● 指數即時</span></span>
   </header>
   <div class="main">
 
     <div class="section-label">🇹🇼 台灣市場指數</div>
     <div class="indices">
-        <div class="index-card up-tw" id="card-TWII" data-region="tw">
+        <div class="index-card" id="card-TWII">
           <div class="index-name">台股加權指數</div>
-          <div class="index-price" id="price-TWII">46,887.77</div>
-          <div class="index-change" id="change-TWII">▲ 594.84 (+1.28%)</div>
+          <div class="index-price na" id="price-TWII">N/A</div>
+          <div class="index-change" id="change-TWII"></div>
         </div>
         <div class="index-card" id="card-TWOII">
           <div class="index-name">櫃買指數</div>
@@ -76,23 +76,23 @@
     <div class="indices">
         <div class="index-card up" id="card-DJI" data-region="us">
           <div class="index-name">道瓊工業指數</div>
-          <div class="index-price" id="price-DJI">52,495.88</div>
-          <div class="index-change" id="change-DJI">▲ 529.85 (+1.02%)</div>
+          <div class="index-price" id="price-DJI">52,788.11</div>
+          <div class="index-change" id="change-DJI">▲ 292.23 (+0.56%)</div>
         </div>
         <div class="index-card up" id="card-GSPC" data-region="us">
           <div class="index-name">S&P 500</div>
-          <div class="index-price" id="price-GSPC">7,712.57</div>
-          <div class="index-change" id="change-GSPC">▲ 21.84 (+0.28%)</div>
+          <div class="index-price" id="price-GSPC">7,765.05</div>
+          <div class="index-change" id="change-GSPC">▲ 52.48 (+0.68%)</div>
         </div>
-        <div class="index-card down" id="card-IXIC" data-region="us">
+        <div class="index-card up" id="card-IXIC" data-region="us">
           <div class="index-name">那斯達克</div>
-          <div class="index-price" id="price-IXIC">26,424.82</div>
-          <div class="index-change" id="change-IXIC">▼ 6.07 (-0.02%)</div>
+          <div class="index-price" id="price-IXIC">26,746.29</div>
+          <div class="index-change" id="change-IXIC">▲ 321.46 (+1.22%)</div>
         </div>
         <div class="index-card up" id="card-RUT" data-region="us">
           <div class="index-name">羅素 2000</div>
-          <div class="index-price" id="price-RUT">2,773.42</div>
-          <div class="index-change" id="change-RUT">▲ 45.12 (+1.65%)</div>
+          <div class="index-price" id="price-RUT">2,787.57</div>
+          <div class="index-change" id="change-RUT">▲ 14.15 (+0.51%)</div>
         </div></div>
 
     <hr class="divider">
@@ -102,168 +102,168 @@
         <div class="col-header"><span class="flag">🇹🇼</span> 台股新聞</div>
         
         <div class="news-item">
-          <a href="https://news.cnyes.com/news/id/6635076" target="_blank" rel="noopener">外資中止連10賣！台股期現貨齊翻多 買超友達、鴻海及南亞各逾2萬張</a>
-          <div class="news-meta"><span class="source-tag">鉅亨網</span>10/21 17:17</div>
+          <a href="https://news.cnyes.com/news/id/6635389" target="_blank" rel="noopener">台積電產能太搶手！英特爾擴廠向前 能接住AI商機？</a>
+          <div class="news-meta"><span class="source-tag">鉅亨網</span>10/22 01:00</div>
         </div>
         <div class="news-item">
-          <a href="https://news.cnyes.com/news/id/6635089" target="_blank" rel="noopener">鉅亨買幣速報 - USDC(USDC)24小時成交量超過28.01億美元，NFPrompt Token(NFP)24小時漲幅達65.8%</a>
-          <div class="news-meta"><span class="source-tag">鉅亨網</span>10/21 17:15</div>
+          <a href="https://news.cnyes.com/news/id/6634668" target="_blank" rel="noopener">蘋果與可口可樂助攻！波克夏股價逼近歷史新高 《巴隆》譽為「終極反AI標的」</a>
+          <div class="news-meta"><span class="source-tag">鉅亨網</span>10/22 00:30</div>
         </div>
         <div class="news-item">
-          <a href="https://news.cnyes.com/news/id/6634965" target="_blank" rel="noopener">美烏和談推動與風險溢價退潮 小麥期貨跌至11周新低</a>
-          <div class="news-meta"><span class="source-tag">鉅亨網</span>10/21 17:10</div>
+          <a href="https://news.cnyes.com/news/id/6634579" target="_blank" rel="noopener">明星策略師Tom Lee堅定買入AI股 底氣來自思科百倍行情</a>
+          <div class="news-meta"><span class="source-tag">鉅亨網</span>10/22 00:00</div>
         </div>
         <div class="news-item">
-          <a href="https://news.cnyes.com/news/id/6635082" target="_blank" rel="noopener">盤後速報 - 第一金優選非投債(00981B)次交易(22)日除息0.06元，參考價8.94元</a>
-          <div class="news-meta"><span class="source-tag">鉅亨網</span>10/21 17:05</div>
+          <a href="https://news.cnyes.com/news/id/6635277" target="_blank" rel="noopener">舊晶片也愈租愈貴！AI算力業者喊需求遠超供給</a>
+          <div class="news-meta"><span class="source-tag">鉅亨網</span>10/21 23:30</div>
         </div>
         <div class="news-item">
-          <a href="https://news.cnyes.com/news/id/6635081" target="_blank" rel="noopener">盤後速報 - 第一金金融債10+(00834B)次交易(22)日除息0.42元，參考價32.7元</a>
-          <div class="news-meta"><span class="source-tag">鉅亨網</span>10/21 17:05</div>
+          <a href="https://news.cnyes.com/news/id/6635323" target="_blank" rel="noopener">借錢愈來愈貴！美歐逾50億美元債務發行踩煞車</a>
+          <div class="news-meta"><span class="source-tag">鉅亨網</span>10/21 23:00</div>
         </div>
         <div class="news-item">
-          <a href="https://news.cnyes.com/news/id/6635080" target="_blank" rel="noopener">盤後速報 - 力達-KY(4552)下週(10月28日)除息0.6元，預估參考價14.4元</a>
-          <div class="news-meta"><span class="source-tag">鉅亨網</span>10/21 17:05</div>
+          <a href="https://news.cnyes.com/news/id/6635356" target="_blank" rel="noopener">首批銷美俄羅斯柴油 10/22啟運 還會有更多批次運出</a>
+          <div class="news-meta"><span class="source-tag">鉅亨網</span>10/21 22:46</div>
         </div>
         <div class="news-item">
-          <a href="https://news.cnyes.com/news/id/6635016" target="_blank" rel="noopener">AI「金絲雀」重鳴！韓十月前20天晶片出口狂飆222.5%  財長：半導體榮景至少持續到2027</a>
-          <div class="news-meta"><span class="source-tag">鉅亨網</span>10/21 17:00</div>
+          <a href="https://news.cnyes.com/news/id/6635339" target="_blank" rel="noopener">全球多達七成網站使用的PHP出事了！重大漏洞恐讓駭客接管伺服器</a>
+          <div class="news-meta"><span class="source-tag">鉅亨網</span>10/21 22:40</div>
         </div>
         <div class="news-item">
-          <a href="https://news.cnyes.com/news/id/6634963" target="_blank" rel="noopener">AI失控疑慮又起！OpenAI曝AI代理自動關監控 還對員工說謊</a>
-          <div class="news-meta"><span class="source-tag">鉅亨網</span>10/21 17:00</div>
+          <a href="https://news.cnyes.com/news/id/6635347" target="_blank" rel="noopener">澤倫斯基最新表態：願在保留至少75%領土控制權基礎上達成和平協議</a>
+          <div class="news-meta"><span class="source-tag">鉅亨網</span>10/21 22:28</div>
         </div>
         <div class="news-item">
-          <a href="https://news.cnyes.com/news/id/6635071" target="_blank" rel="noopener">記憶體成本飆漲！中國手機Q3出貨量創14年同期新低 華為、蘋果逆勢突圍</a>
-          <div class="news-meta"><span class="source-tag">鉅亨網</span>10/21 16:56</div>
+          <a href="https://news.cnyes.com/news/id/6635303" target="_blank" rel="noopener">ChatGPT廣告愈來愈普遍！OpenAI再拓26國 衝刺營收</a>
+          <div class="news-meta"><span class="source-tag">鉅亨網</span>10/21 22:20</div>
         </div>
         <div class="news-item">
-          <a href="https://news.cnyes.com/news/id/6635015" target="_blank" rel="noopener">馬斯克挺特斯拉、SpaceX合併 3.5兆美元版圖背後有三大關卡</a>
-          <div class="news-meta"><span class="source-tag">鉅亨網</span>10/21 16:40</div>
+          <a href="https://news.cnyes.com/news/id/6635233" target="_blank" rel="noopener">AI對手也能當生意夥伴！Google Cloud將開賣OpenAI模型</a>
+          <div class="news-meta"><span class="source-tag">鉅亨網</span>10/21 22:00</div>
         </div>
         <div class="news-item">
-          <a href="https://money.udn.com/money/story/5612/9829225" target="_blank" rel="noopener">中華創智國際成立周年 以資安認證推動可信賴 AI</a>
-          <div class="news-meta"><span class="source-tag">經濟日報</span>10/21 18:02</div>
+          <a href="https://money.udn.com/money/story/5612/9829734" target="_blank" rel="noopener">輝達 GTC 大戲登場 黃仁勳：現在正處於新工業革命開端 所有人獲利能力將提升</a>
+          <div class="news-meta"><span class="source-tag">經濟日報</span>10/22 01:53</div>
         </div>
         <div class="news-item">
-          <a href="https://money.udn.com/money/story/5612/9829208" target="_blank" rel="noopener">財政部：公益彩券前9月銷售1477億元 年增5.9%</a>
-          <div class="news-meta"><span class="source-tag">經濟日報</span>10/21 17:55</div>
+          <a href="https://money.udn.com/money/story/10871/9829680" target="_blank" rel="noopener">SOGO 周年慶 業績衝130億 董座黃晴雯喊話景氣回來了</a>
+          <div class="news-meta"><span class="source-tag">經濟日報</span>10/22 01:38</div>
         </div>
         <div class="news-item">
-          <a href="https://money.udn.com/money/story/5612/9829190" target="_blank" rel="noopener">CLDA 改選理監事 晶碩光學董事長郭明棟接任第二屆理事長</a>
-          <div class="news-meta"><span class="source-tag">經濟日報</span>10/21 17:47</div>
+          <a href="https://money.udn.com/money/story/10871/9829681" target="_blank" rel="noopener">遠東 SOGO 復興館改裝 擴精品陣容</a>
+          <div class="news-meta"><span class="source-tag">經濟日報</span>10/22 01:36</div>
         </div>
         <div class="news-item">
-          <a href="https://money.udn.com/money/story/5612/9829189" target="_blank" rel="noopener">台灣大收購精誠過公平會 11/5前拚最高58%股權</a>
-          <div class="news-meta"><span class="source-tag">經濟日報</span>10/21 17:46</div>
+          <a href="https://money.udn.com/money/story/5612/9829683" target="_blank" rel="noopener">Google 台灣區前總座簡立峰：AI 新經濟 翻轉四產業</a>
+          <div class="news-meta"><span class="source-tag">經濟日報</span>10/22 01:36</div>
         </div>
         <div class="news-item">
-          <a href="https://money.udn.com/money/story/5612/9829182" target="_blank" rel="noopener">股匯強勢反攻 新台幣強升1.29角創逾2個月最大升幅</a>
-          <div class="news-meta"><span class="source-tag">經濟日報</span>10/21 17:45</div>
+          <a href="https://money.udn.com/money/story/5612/9829689" target="_blank" rel="noopener">三三會理事長林伯豐籲完善 AI 安全治理鏈</a>
+          <div class="news-meta"><span class="source-tag">經濟日報</span>10/22 01:35</div>
         </div>
         <div class="news-item">
-          <a href="https://money.udn.com/money/story/5612/9829172" target="_blank" rel="noopener">SOGO 周年慶拚130億元 大巨蛋商場業績超標26%</a>
-          <div class="news-meta"><span class="source-tag">經濟日報</span>10/21 17:39</div>
+          <a href="https://money.udn.com/money/story/5612/9829702" target="_blank" rel="noopener">戴爾：明年記憶體缺貨加劇</a>
+          <div class="news-meta"><span class="source-tag">經濟日報</span>10/22 01:35</div>
         </div>
         <div class="news-item">
-          <a href="https://money.udn.com/money/story/5612/9829168" target="_blank" rel="noopener">亞昕科技23日每股120元登興櫃 攻邊緣AI商機</a>
-          <div class="news-meta"><span class="source-tag">經濟日報</span>10/21 17:36</div>
+          <a href="https://money.udn.com/money/story/10871/9829693" target="_blank" rel="noopener">長榮航旅展 強打優惠機票 桃園飛香港只要3,280元起</a>
+          <div class="news-meta"><span class="source-tag">經濟日報</span>10/22 01:34</div>
         </div>
         <div class="news-item">
-          <a href="https://money.udn.com/money/story/5612/9829155" target="_blank" rel="noopener">公平會否決Grab收購foodpanda台灣業務案 Grab：對結果感到失望</a>
-          <div class="news-meta"><span class="source-tag">經濟日報</span>10/21 17:33</div>
+          <a href="https://money.udn.com/money/story/5612/9829655" target="_blank" rel="noopener">坐墊大廠 VELO 把皮革餘料做成實用隨身配件 跨產業落實循環經濟</a>
+          <div class="news-meta"><span class="source-tag">經濟日報</span>10/21 22:46</div>
         </div>
         <div class="news-item">
-          <a href="https://money.udn.com/money/story/5612/9829138" target="_blank" rel="noopener">12家航空公司參加ITF旅展 國籍業者祭促銷</a>
-          <div class="news-meta"><span class="source-tag">經濟日報</span>10/21 17:30</div>
+          <a href="https://money.udn.com/money/story/5612/9829582" target="_blank" rel="noopener">印度躍升台灣工具機第三大出口市場 產官攜手助機械業搶攻製造商機</a>
+          <div class="news-meta"><span class="source-tag">經濟日報</span>10/21 21:57</div>
         </div>
         <div class="news-item">
-          <a href="https://money.udn.com/money/story/5612/9829131" target="_blank" rel="noopener">公平會禁止 Grab 併購 Foodpanda 外送協會表達肯定</a>
-          <div class="news-meta"><span class="source-tag">經濟日報</span>10/21 17:25</div>
+          <a href="https://money.udn.com/money/story/5612/9829578" target="_blank" rel="noopener">黃仁勳：AI 需求異常強勁、產能才是瓶頸 輝達攜手台供應鏈大擴產</a>
+          <div class="news-meta"><span class="source-tag">經濟日報</span>10/21 21:52</div>
         </div>
       </div>
       <div class="news-col">
         <div class="col-header"><span class="flag">🇺🇸</span> 美股新聞</div>
         
         <div class="news-item">
+          <a href="https://www.marketwatch.com/story/medicare-is-a-bargain-what-america-cant-afford-is-private-health-insurance-8a834023?mod=mw_rss_topstories" target="_blank" rel="noopener">Medicare is a bargain. What America can’t afford is private health insurance.</a>
+          <div class="news-meta"><span class="source-tag">MarketWatch</span>10/22 00:34</div>
+        </div>
+        <div class="news-item">
+          <a href="https://www.marketwatch.com/story/polymarket-traders-see-a-10-chance-the-ai-bubble-bursts-before-new-years-day-ad33258b?mod=mw_rss_topstories" target="_blank" rel="noopener">Polymarket traders see a 10% chance the AI bubble bursts before New Year’s Day</a>
+          <div class="news-meta"><span class="source-tag">MarketWatch</span>10/21 23:59</div>
+        </div>
+        <div class="news-item">
+          <a href="https://www.marketwatch.com/story/elon-musk-promised-a-spacex-share-to-every-kid-in-america-dont-hold-your-breath-d6572cdf?mod=mw_rss_topstories" target="_blank" rel="noopener">Elon Musk promised a SpaceX share to every kid in America — don’t hold your breath</a>
+          <div class="news-meta"><span class="source-tag">MarketWatch</span>10/21 23:50</div>
+        </div>
+        <div class="news-item">
+          <a href="https://www.marketwatch.com/story/ai-stocks-are-probably-in-a-bubble-but-might-be-worth-holding-onto-says-citadels-ken-griffin-87f535ce?mod=mw_rss_topstories" target="_blank" rel="noopener">AI stocks are probably in a bubble — but might be worth holding on to, says Citadel’s Ken Griffin</a>
+          <div class="news-meta"><span class="source-tag">MarketWatch</span>10/21 23:27</div>
+        </div>
+        <div class="news-item">
           <a href="https://www.marketwatch.com/story/my-unmarried-partner-of-17-years-left-me-his-1-1-million-home-his-three-children-are-livid-should-i-share-my-inheritance-a11d593d?mod=mw_rss_topstories" target="_blank" rel="noopener">My partner of 17 years left me his $1 million home. His children say I influenced him to do so. Should I share my inheritance?</a>
-          <div class="news-meta"><span class="source-tag">MarketWatch</span>10/21 18:15</div>
+          <div class="news-meta"><span class="source-tag">MarketWatch</span>10/21 23:15</div>
         </div>
         <div class="news-item">
-          <a href="https://www.marketwatch.com/story/in-the-battle-for-ai-supremacy-china-is-only-six-months-behind-the-u-s-but-that-means-theyre-winning-says-former-google-ceo-82d71e7a?mod=mw_rss_topstories" target="_blank" rel="noopener">In the battle for AI supremacy, China is only six months behind the U.S — but that means they’re winning, says former Google CEO</a>
-          <div class="news-meta"><span class="source-tag">MarketWatch</span>10/21 18:12</div>
+          <a href="https://www.marketwatch.com/story/moderna-is-about-to-release-the-trial-results-for-its-cancer-vaccine-a-lot-is-riding-on-this-data-ccbf8c9c?mod=mw_rss_topstories" target="_blank" rel="noopener">Moderna is about to release the trial results for its cancer vaccine. A lot is riding on this data.</a>
+          <div class="news-meta"><span class="source-tag">MarketWatch</span>10/21 23:00</div>
         </div>
         <div class="news-item">
-          <a href="https://www.marketwatch.com/story/we-have-a-300-000-mortgage-with-a-2-75-interest-rate-i-want-to-pay-it-off-my-husband-says-im-crazy-whos-right-4ed15226?mod=mw_rss_topstories" target="_blank" rel="noopener">We have a $300,000 mortgage with a 2.75% interest rate. I want to pay it off. My husband says I’m crazy. Who’s right?</a>
-          <div class="news-meta"><span class="source-tag">MarketWatch</span>10/21 17:15</div>
+          <a href="https://www.marketwatch.com/story/money-saving-hacks-to-cope-with-higher-prices-from-our-readers-a092767e?mod=mw_rss_topstories" target="_blank" rel="noopener">Money-saving habits to cope with higher prices — from our readers</a>
+          <div class="news-meta"><span class="source-tag">MarketWatch</span>10/21 22:49</div>
         </div>
         <div class="news-item">
-          <a href="https://www.marketwatch.com/story/george-foremans-lavish-texas-estate-with-50-car-garage-is-listed-for-6-million-d464b764?mod=mw_rss_topstories" target="_blank" rel="noopener">George Foreman’s lavish Texas estate with 50-car garage is listed for $6 million</a>
-          <div class="news-meta"><span class="source-tag">MarketWatch</span>10/21 17:04</div>
+          <a href="https://www.marketwatch.com/story/colleges-raced-to-build-massive-computer-science-departments-now-the-boom-is-turning-to-bust-692cfe37?mod=mw_rss_topstories" target="_blank" rel="noopener">Colleges raced to build massive computer-science departments. Now the boom is turning to bust.</a>
+          <div class="news-meta"><span class="source-tag">MarketWatch</span>10/21 22:46</div>
         </div>
         <div class="news-item">
-          <a href="https://www.marketwatch.com/story/my-sister-moved-in-with-our-widowed-mother-78-and-says-she-deserves-the-family-home-is-she-right-7981835d?mod=mw_rss_topstories" target="_blank" rel="noopener">My sister moved in with our mother, 78, and says she deserves the $925,000 family home. Is she right?</a>
-          <div class="news-meta"><span class="source-tag">MarketWatch</span>10/21 17:00</div>
+          <a href="https://www.marketwatch.com/story/im-naturally-skeptical-i-receive-10-calls-a-day-offering-me-15-000-loans-at-8-interest-is-this-a-scam-825c3431?mod=mw_rss_topstories" target="_blank" rel="noopener">I receive 10 calls a day promising me $15,000 loans at 8% interest. Are these legitimate offers?</a>
+          <div class="news-meta"><span class="source-tag">MarketWatch</span>10/21 22:45</div>
         </div>
         <div class="news-item">
-          <a href="https://www.marketwatch.com/story/why-spacexs-stock-is-surging-and-lifting-the-broader-ai-universe-along-with-it-0cd62f39?mod=mw_rss_topstories" target="_blank" rel="noopener">Why SpaceX’s stock is surging — and lifting the broader AI universe along with it</a>
-          <div class="news-meta"><span class="source-tag">MarketWatch</span>10/21 16:55</div>
+          <a href="https://www.marketwatch.com/story/time-for-a-micron-mindset-shift-heres-how-to-navigate-the-new-ai-landscape-09395ac8?mod=mw_rss_topstories" target="_blank" rel="noopener">Time for a Micron mindset shift? Here’s how to navigate the new AI landscape.</a>
+          <div class="news-meta"><span class="source-tag">MarketWatch</span>10/21 22:33</div>
         </div>
         <div class="news-item">
-          <a href="https://www.marketwatch.com/story/ai-stocks-are-probably-in-a-bubble-but-might-be-worth-holding-onto-says-citadels-ken-griffin-87f535ce?mod=mw_rss_topstories" target="_blank" rel="noopener">AI stocks are probably in a bubble — but might be worth holding onto, says Citadel’s Ken Griffin</a>
-          <div class="news-meta"><span class="source-tag">MarketWatch</span>10/21 16:50</div>
+          <a href="https://www.cnbc.com/2026/10/21/ukraine-russia-drone-diesel-refinery-trump-putin-zelenskyy.html" target="_blank" rel="noopener">How Ukraine’s drone strikes on Russia crippled the world’s second-largest diesel supplier</a>
+          <div class="news-meta"><span class="source-tag">CNBC Markets</span>10/22 01:27</div>
         </div>
         <div class="news-item">
-          <a href="https://www.marketwatch.com/story/bull-markets-tend-to-peak-with-a-whimper-not-a-bang-but-a-15-correction-for-the-s-p-500-may-be-next-dab40e2c?mod=mw_rss_topstories" target="_blank" rel="noopener">Bull markets tend to peak with a whimper, not a bang — but a 15% correction for the S&amp;P 500 may be next</a>
-          <div class="news-meta"><span class="source-tag">MarketWatch</span>10/21 08:24</div>
+          <a href="https://www.cnbc.com/2026/10/21/meta-new-mexico-cambridge-analytica-penalty.html" target="_blank" rel="noopener">Meta ordered to pay $25 billion penalty in New Mexico Cambridge Analytica case</a>
+          <div class="news-meta"><span class="source-tag">CNBC Markets</span>10/22 01:45</div>
         </div>
         <div class="news-item">
-          <a href="https://www.marketwatch.com/story/super-micros-stock-soars-after-surprise-update-with-dell-and-hpe-shares-joining-the-rally-1837a69f?mod=mw_rss_topstories" target="_blank" rel="noopener">Super Micro’s stock soars after surprise update — with Dell and HPE shares joining the rally</a>
-          <div class="news-meta"><span class="source-tag">MarketWatch</span>10/21 08:15</div>
+          <a href="https://www.cnbc.com/2026/10/21/spacex-spcx-stock-musk-merger-tesla.html" target="_blank" rel="noopener">SpaceX stock jumps 10% after earnings beat and Musk hints at Tesla tie-up</a>
+          <div class="news-meta"><span class="source-tag">CNBC Markets</span>10/22 00:08</div>
         </div>
         <div class="news-item">
-          <a href="https://www.marketwatch.com/story/teslas-stock-rises-as-elon-musk-drops-new-clues-about-a-possible-spacex-merger-8cc44fc2?mod=mw_rss_topstories" target="_blank" rel="noopener">Tesla’s stock rises as Elon Musk drops new clues about a possible SpaceX merger</a>
-          <div class="news-meta"><span class="source-tag">MarketWatch</span>10/21 08:14</div>
+          <a href="https://www.cnbc.com/2026/10/21/stocks-making-the-biggest-moves-midday-spcx-meta-smci-roiv.html" target="_blank" rel="noopener">Stocks making the biggest moves midday: SpaceX, Meta Platforms, Super Micro Computer, Roivant Sciences &amp; more</a>
+          <div class="news-meta"><span class="source-tag">CNBC Markets</span>10/22 00:48</div>
         </div>
         <div class="news-item">
-          <a href="https://www.cnbc.com/2026/10/21/spacex-spcx-stock-musk-merger-tesla.html" target="_blank" rel="noopener">SpaceX up 10% in premarket after earnings beat and Musk hints at Tesla tie-up</a>
-          <div class="news-meta"><span class="source-tag">CNBC Markets</span>10/21 16:52</div>
+          <a href="https://www.cnbc.com/2026/10/20/stock-market-today-live-updates.html" target="_blank" rel="noopener">Nasdaq gains as Musk's SpaceX and Tesla revive tech rally: Live updates</a>
+          <div class="news-meta"><span class="source-tag">CNBC Markets</span>10/22 02:06</div>
         </div>
         <div class="news-item">
-          <a href="https://www.cnbc.com/2026/10/21/witkoff-russia-putin-ukraine-zelenskyy.html" target="_blank" rel="noopener">Witkoff heads to Russia for Putin talks as Zelenskyy insists 'nothing about Ukraine without Ukraine'</a>
-          <div class="news-meta"><span class="source-tag">CNBC Markets</span>10/21 17:29</div>
+          <a href="https://www.cnbc.com/2026/10/21/morgan-stanley-western-digital-terawulf-williams.html" target="_blank" rel="noopener">Earnings season is in full swing. These are Morgan Stanley's highest conviction plays</a>
+          <div class="news-meta"><span class="source-tag">CNBC Markets</span>10/22 00:20</div>
         </div>
         <div class="news-item">
-          <a href="https://www.cnbc.com/2026/10/21/france-protests-bonds-debt.html" target="_blank" rel="noopener">French 10-year bond yield hits 5% for first time since 2002 amid unrest</a>
-          <div class="news-meta"><span class="source-tag">CNBC Markets</span>10/21 18:03</div>
+          <a href="https://www.cnbc.com/2026/10/21/gm-vehicle-development-ai-software.html" target="_blank" rel="noopener">GM aims to develop vehicles in as little as two years with AI, software push</a>
+          <div class="news-meta"><span class="source-tag">CNBC Markets</span>10/22 02:03</div>
         </div>
         <div class="news-item">
-          <a href="https://www.cnbc.com/2026/10/21/openai-ai-models-safety-monitoring.html" target="_blank" rel="noopener">OpenAI's most powerful AI models disabled their own safety monitoring — and one lied about it</a>
-          <div class="news-meta"><span class="source-tag">CNBC Markets</span>10/21 15:49</div>
+          <a href="https://www.cnbc.com/2026/10/21/trump-pac-spending-midterm-election-house-republicans.html" target="_blank" rel="noopener">Trump-aligned super PACs pour millions into once-safe GOP House seats</a>
+          <div class="news-meta"><span class="source-tag">CNBC Markets</span>10/22 01:51</div>
         </div>
         <div class="news-item">
-          <a href="https://www.cnbc.com/2026/10/20/stryker-stock-buying-opportunity.html" target="_blank" rel="noopener">A top medical technology stock is trading at a big discount. Here's why I'm buying</a>
-          <div class="news-meta"><span class="source-tag">CNBC Markets</span>10/21 04:44</div>
+          <a href="https://www.cnbc.com/2026/10/21/epstein-new-mexico-lawsuit-sex-trafficking.html" target="_blank" rel="noopener">New Mexico AG lawsuit accuses Epstein's attorney and accountant of facilitating sex trafficking</a>
+          <div class="news-meta"><span class="source-tag">CNBC Markets</span>10/22 01:34</div>
         </div>
         <div class="news-item">
-          <a href="https://www.cnbc.com/2026/10/21/trump-data-centers-community-dividend.html" target="_blank" rel="noopener">'MAKE DEALS': Trump says data centers should pay communities a 'dividend' to win support</a>
-          <div class="news-meta"><span class="source-tag">CNBC Markets</span>10/21 16:53</div>
-        </div>
-        <div class="news-item">
-          <a href="https://www.cnbc.com/2026/10/20/boeing-737-max-10-certification.html" target="_blank" rel="noopener">Boeing wins FAA approval for 737 Max 10 after years of delays as Duffy says certification process should be faster</a>
-          <div class="news-meta"><span class="source-tag">CNBC Markets</span>10/21 06:01</div>
-        </div>
-        <div class="news-item">
-          <a href="https://www.cnbc.com/2026/10/20/trump-tariffs-canada-section-338-lawsuit.html" target="_blank" rel="noopener">Trump sued over 50% tariffs on Canada in latest trade challenge</a>
-          <div class="news-meta"><span class="source-tag">CNBC Markets</span>10/21 02:06</div>
-        </div>
-        <div class="news-item">
-          <a href="https://www.cnbc.com/2026/10/20/stock-market-today-live-updates.html" target="_blank" rel="noopener">Stock futures rise as traders evaluate latest raft of earnings; SpaceX shares surge: Live updates</a>
-          <div class="news-meta"><span class="source-tag">CNBC Markets</span>10/21 17:48</div>
-        </div>
-        <div class="news-item">
-          <a href="https://www.cnbc.com/2026/10/20/santoli-key-sp-500-level-to-watch.html" target="_blank" rel="noopener">Investors look to earnings to reset the bull market. The key level to watch on the S&amp;P 500</a>
-          <div class="news-meta"><span class="source-tag">CNBC Markets</span>10/20 20:52</div>
+          <a href="https://www.cnbc.com/2026/10/21/intel-hits-construction-milestone-at-delayed-ohio-chip-fab-.html" target="_blank" rel="noopener">Intel hits construction milestone at Ohio chip fab that’s at least 5 years behind schedule</a>
+          <div class="news-meta"><span class="source-tag">CNBC Markets</span>10/22 00:55</div>
         </div>
       </div>
     </div>
